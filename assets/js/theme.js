@@ -13,10 +13,10 @@
     html.classList.remove('dark');
   }
   
-  // Update toggle button text
+  // Update toggle button icon
   function updateToggleText() {
     if (themeToggle) {
-      themeToggle.textContent = html.classList.contains('dark') ? '☀️ Light' : '🌙 Dark';
+      themeToggle.textContent = html.classList.contains('dark') ? '☀️' : '🌙';
     }
   }
   
