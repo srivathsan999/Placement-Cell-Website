@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+            color: #0F172A;
+        }
+        .dark body {
+            background-color: #020617;
+            color: #E5E7EB;
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+        }
+        h1 { font-weight: 700; }
+        h2 { font-weight: 600; }
+        h3 { font-weight: 600; }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center py-12 px-4">
+    <div class="text-center max-w-2xl">
+        <div class="mb-8">
+            <h1 class="text-6xl md:text-8xl font-bold text-[#1E3A8A] dark:text-[#3B82F6] mb-4">404</h1>
+            <h2 class="text-3xl md:text-4xl font-semibold mb-4 text-[#0F172A] dark:text-[#E5E7EB]">Page Not Found</h2>
+            <p class="text-lg text-[#334155] dark:text-[#94A3B8] mb-8">
+                The page you are looking for does not exist or has been moved.
+            </p>
+        </div>
+        <div class="space-y-4">
+            <a href="index.html" class="inline-block neu-button px-8 py-3 font-semibold text-[#1E3A8A] dark:text-[#3B82F6]">Go to Home</a>
+            <div class="mt-6">
+                <button id="theme-toggle" class="text-sm text-[#334155] dark:text-[#94A3B8] hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">🌙 Dark Mode</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/theme.js"></script>
+</body>
+</html>
+

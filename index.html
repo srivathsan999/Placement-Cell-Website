@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Cell - Home</title>
+    <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+            color: #0F172A;
+        }
+        .dark body {
+            background-color: #020617;
+            color: #E5E7EB;
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+        }
+        h1 { font-weight: 700; }
+        h2 { font-weight: 600; }
+        h3 { font-weight: 600; }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="glass sticky top-0 z-50 border-b border-gray-200 dark:border-gray-800">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/img/logo.svg" alt="Logo" class="h-10 w-10">
+                    <span class="text-xl font-semibold text-[#1E3A8A] dark:text-[#3B82F6]">Placement Cell</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">Home</a>
+                    <a href="about.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">About</a>
+                    <a href="process.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">Process</a>
+                    <a href="recruiters.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">Recruiters</a>
+                    <a href="statistics.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">Statistics</a>
+                    <a href="contact.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">Contact</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="px-4 py-2 text-sm font-medium text-[#0F172A] dark:text-[#E5E7EB]">🌙 Dark</button>
+                    <div class="dropdown">
+                        <button class="dropdown-button neu-button px-4 py-2 text-sm font-medium text-[#1E3A8A] dark:text-[#3B82F6]">Login</button>
+                        <div class="dropdown-menu">
+                            <a href="student-login.html" class="dropdown-item">Student Login</a>
+                            <a href="recruiter-login.html" class="dropdown-item">Recruiter Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section glass py-24 px-4 text-center">
+        <div class="container mx-auto max-w-4xl">
+            <div class="mb-8">
+                <img src="assets/img/logo.svg" alt="Logo" class="h-20 w-20 mx-auto mb-6 opacity-90">
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 text-[#0F172A] dark:text-[#E5E7EB] leading-tight">
+                Institutional Placement Cell
+            </h1>
+            <p class="text-xl md:text-2xl text-[#334155] dark:text-[#94A3B8] mb-10 max-w-2xl mx-auto leading-relaxed">
+                Connecting talent with opportunity. Empowering careers through strategic partnerships.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="student-login.html" class="hero-button">Student Portal</a>
+                <a href="recruiter-login.html" class="hero-button-secondary">Recruiter Portal</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Placement Statistics -->
+    <section class="py-20 px-4 bg-[#F8FAFC] dark:bg-[#020617]">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-[#0F172A] dark:text-[#E5E7EB]">Placement Statistics</h2>
+                <p class="text-lg text-[#64748B] dark:text-[#94A3B8] max-w-2xl mx-auto">Our commitment to excellence reflected in numbers</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div class="stat-card">
+                    <div class="stat-value text-[#1E3A8A] dark:text-[#3B82F6]">580+</div>
+                    <div class="stat-label">Total Placements</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value text-[#1E3A8A] dark:text-[#3B82F6]">120+</div>
+                    <div class="stat-label">Recruiting Partners</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value success">92%</div>
+                    <div class="stat-label">Placement Rate</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value accent">₹12L</div>
+                    <div class="stat-label">Average Package</div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="statistics.html" class="stat-link">
+                    View Detailed Statistics
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recruiters Preview -->
+    <section class="py-16 px-4 bg-white dark:bg-[#1e293b]">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl font-semibold text-center mb-12 text-[#0F172A] dark:text-[#E5E7EB]">Our Recruiting Partners</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-container">
+                        <img src="assets/img/recruiters/techcorp.svg" alt="TechCorp Logo">
+                    </div>
+                    <h3 class="recruiter-name">TechCorp</h3>
+                    <p class="recruiter-industry">Software Development</p>
+                    <p class="recruiter-info">📍 Bangalore, India</p>
+                    <div class="recruiter-stats">
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">45+</div>
+                            <div class="recruiter-stat-label">Placements</div>
+                        </div>
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">₹15L</div>
+                            <div class="recruiter-stat-label">Avg Package</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-container">
+                        <img src="assets/img/recruiters/bankone.svg" alt="BankOne Logo">
+                    </div>
+                    <h3 class="recruiter-name">BankOne</h3>
+                    <p class="recruiter-industry">Banking Services</p>
+                    <p class="recruiter-info">📍 Mumbai, India</p>
+                    <div class="recruiter-stats">
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">40+</div>
+                            <div class="recruiter-stat-label">Placements</div>
+                        </div>
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">₹13L</div>
+                            <div class="recruiter-stat-label">Avg Package</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-container">
+                        <img src="assets/img/recruiters/engitech.svg" alt="EngiTech Logo">
+                    </div>
+                    <h3 class="recruiter-name">EngiTech</h3>
+                    <p class="recruiter-industry">Engineering Solutions</p>
+                    <p class="recruiter-info">📍 Bangalore, India</p>
+                    <div class="recruiter-stats">
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">42+</div>
+                            <div class="recruiter-stat-label">Placements</div>
+                        </div>
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">₹11L</div>
+                            <div class="recruiter-stat-label">Avg Package</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-container">
+                        <img src="assets/img/recruiters/consultpro.svg" alt="ConsultPro Logo">
+                    </div>
+                    <h3 class="recruiter-name">ConsultPro</h3>
+                    <p class="recruiter-industry">Management Consulting</p>
+                    <p class="recruiter-info">📍 Mumbai, India</p>
+                    <div class="recruiter-stats">
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">20+</div>
+                            <div class="recruiter-stat-label">Placements</div>
+                        </div>
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">₹20L</div>
+                            <div class="recruiter-stat-label">Avg Package</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-container">
+                        <img src="assets/img/recruiters/datasys.svg" alt="DataSys Logo">
+                    </div>
+                    <h3 class="recruiter-name">DataSys</h3>
+                    <p class="recruiter-industry">Data Analytics</p>
+                    <p class="recruiter-info">📍 Hyderabad, India</p>
+                    <div class="recruiter-stats">
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">32+</div>
+                            <div class="recruiter-stat-label">Placements</div>
+                        </div>
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">₹12L</div>
+                            <div class="recruiter-stat-label">Avg Package</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-container">
+                        <img src="assets/img/recruiters/financehub.svg" alt="FinanceHub Logo">
+                    </div>
+                    <h3 class="recruiter-name">FinanceHub</h3>
+                    <p class="recruiter-industry">Financial Services</p>
+                    <p class="recruiter-info">📍 Bangalore, India</p>
+                    <div class="recruiter-stats">
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">35+</div>
+                            <div class="recruiter-stat-label">Placements</div>
+                        </div>
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">₹14L</div>
+                            <div class="recruiter-stat-label">Avg Package</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="recruiters.html" class="text-[#1E3A8A] dark:text-[#3B82F6] font-semibold hover:underline">View All Recruiters →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Placement Process Preview -->
+    <section class="py-16 px-4 bg-[#F8FAFC] dark:bg-[#020617]">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-semibold text-center mb-12 text-[#0F172A] dark:text-[#E5E7EB]">Placement Process</h2>
+            <div class="space-y-6">
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#1E3A8A] dark:bg-[#3B82F6] text-white flex items-center justify-center font-bold">1</div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2 text-[#0F172A] dark:text-[#E5E7EB]">Registration</h3>
+                        <p class="text-[#334155] dark:text-[#94A3B8]">Students register through the portal with academic credentials.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#1E3A8A] dark:bg-[#3B82F6] text-white flex items-center justify-center font-bold">2</div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2 text-[#0F172A] dark:text-[#E5E7EB]">Screening</h3>
+                        <p class="text-[#334155] dark:text-[#94A3B8]">Placement cell reviews and shortlists eligible candidates.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#1E3A8A] dark:bg-[#3B82F6] text-white flex items-center justify-center font-bold">3</div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2 text-[#0F172A] dark:text-[#E5E7EB]">Interview</h3>
+                        <p class="text-[#334155] dark:text-[#94A3B8]">Recruiters conduct interviews and assessments.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="process.html" class="text-[#1E3A8A] dark:text-[#3B82F6] font-semibold hover:underline">View Complete Process →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Announcements -->
+    <section class="py-16 px-4 bg-white dark:bg-[#1e293b]">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-semibold text-center mb-12 text-[#0F172A] dark:text-[#E5E7EB]">Announcements</h2>
+            <div class="space-y-4">
+                <div class="border-l-4 border-[#1E3A8A] dark:border-[#3B82F6] pl-4 py-2">
+                    <h3 class="font-semibold text-[#0F172A] dark:text-[#E5E7EB] mb-1">Placement Drive - Tech Companies</h3>
+                    <p class="text-sm text-[#334155] dark:text-[#94A3B8]">Scheduled for March 15, 2024. All eligible students must register by March 10.</p>
+                </div>
+                <div class="border-l-4 border-[#0EA5E9] pl-4 py-2">
+                    <h3 class="font-semibold text-[#0F172A] dark:text-[#E5E7EB] mb-1">Resume Workshop</h3>
+                    <p class="text-sm text-[#334155] dark:text-[#94A3B8]">Workshop on effective resume writing scheduled for February 28, 2024.</p>
+                </div>
+                <div class="border-l-4 border-[#16A34A] pl-4 py-2">
+                    <h3 class="font-semibold text-[#0F172A] dark:text-[#E5E7EB] mb-1">New Recruiter Partnership</h3>
+                    <p class="text-sm text-[#334155] dark:text-[#94A3B8]">We are pleased to announce a new partnership with leading industry organizations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1E3A8A] dark:bg-[#0f172a] text-white py-12 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="assets/img/logo.svg" alt="Logo" class="h-10 w-10 footer-logo">
+                        <h3 class="text-xl font-semibold">Placement Cell</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm">Connecting students with leading organizations for successful career placements.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="text-gray-300 hover:text-white">About</a></li>
+                        <li><a href="process.html" class="text-gray-300 hover:text-white">Process</a></li>
+                        <li><a href="recruiters.html" class="text-gray-300 hover:text-white">Recruiters</a></li>
+                        <li><a href="statistics.html" class="text-gray-300 hover:text-white">Statistics</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li>Email: placement@university.edu</li>
+                        <li>Phone: +91 1234567890</li>
+                        <li>Address: University Campus</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2025 Placement Cell. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/dropdown.js"></script>
+</body>
+</html>
+

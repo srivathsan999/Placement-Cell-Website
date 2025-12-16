@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Process</title>
+    <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+            color: #0F172A;
+        }
+        .dark body {
+            background-color: #020617;
+            color: #E5E7EB;
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+        }
+        h1 { font-weight: 700; }
+        h2 { font-weight: 600; }
+        h3 { font-weight: 600; }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="glass sticky top-0 z-50 border-b border-gray-200 dark:border-gray-800">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/img/logo.svg" alt="Logo" class="h-10 w-10">
+                    <span class="text-xl font-semibold text-[#1E3A8A] dark:text-[#3B82F6]">Placement Cell</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">Home</a>
+                    <a href="about.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">About</a>
+                    <a href="process.html" class="text-[#1E3A8A] dark:text-[#3B82F6] font-medium">Process</a>
+                    <a href="recruiters.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">Recruiters</a>
+                    <a href="statistics.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">Statistics</a>
+                    <a href="contact.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">Contact</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="px-4 py-2 text-sm font-medium text-[#0F172A] dark:text-[#E5E7EB]">🌙 Dark</button>
+                    <div class="dropdown">
+                        <button class="dropdown-button neu-button px-4 py-2 text-sm font-medium text-[#1E3A8A] dark:text-[#3B82F6]">Login</button>
+                        <div class="dropdown-menu">
+                            <a href="student-login.html" class="dropdown-item">Student Login</a>
+                            <a href="recruiter-login.html" class="dropdown-item">Recruiter Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="py-12 px-4 bg-[#F8FAFC] dark:bg-[#020617]">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-[#0F172A] dark:text-[#E5E7EB]">Placement Process</h1>
+            <p class="text-lg text-[#334155] dark:text-[#94A3B8]">A systematic approach to connecting students with opportunities</p>
+        </div>
+    </section>
+
+    <!-- Process Steps -->
+    <section class="py-16 px-4 bg-white dark:bg-[#1e293b]">
+        <div class="container mx-auto max-w-4xl">
+            <div class="space-y-12">
+                <!-- Step 1 -->
+                <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-6">
+                    <div class="flex-shrink-0 w-16 h-16 rounded-full bg-[#1E3A8A] dark:bg-[#3B82F6] text-white flex items-center justify-center font-bold text-2xl">1</div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-semibold mb-3 text-[#0F172A] dark:text-[#E5E7EB]">Student Registration</h3>
+                        <p class="text-[#334155] dark:text-[#94A3B8] mb-4 leading-relaxed">
+                            Students must register through the placement portal by providing accurate academic credentials, 
+                            including CGPA, course details, and personal information. All documents must be verified and uploaded.
+                        </p>
+                        <ul class="list-disc list-inside space-y-2 text-[#334155] dark:text-[#94A3B8] ml-4">
+                            <li>Complete online registration form</li>
+                            <li>Upload academic transcripts</li>
+                            <li>Submit resume and cover letter</li>
+                            <li>Verify contact information</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-6">
+                    <div class="flex-shrink-0 w-16 h-16 rounded-full bg-[#1E3A8A] dark:bg-[#3B82F6] text-white flex items-center justify-center font-bold text-2xl">2</div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-semibold mb-3 text-[#0F172A] dark:text-[#E5E7EB]">Eligibility Screening</h3>
+                        <p class="text-[#334155] dark:text-[#94A3B8] mb-4 leading-relaxed">
+                            The placement cell reviews all registrations against eligibility criteria set by recruiting organizations. 
+                            Students meeting minimum requirements are shortlisted for further rounds.
+                        </p>
+                        <ul class="list-disc list-inside space-y-2 text-[#334155] dark:text-[#94A3B8] ml-4">
+                            <li>Academic performance verification</li>
+                            <li>Eligibility criteria matching</li>
+                            <li>Document authenticity check</li>
+                            <li>Shortlist generation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-6">
+                    <div class="flex-shrink-0 w-16 h-16 rounded-full bg-[#1E3A8A] dark:bg-[#3B82F6] text-white flex items-center justify-center font-bold text-2xl">3</div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-semibold mb-3 text-[#0F172A] dark:text-[#E5E7EB]">Pre-Placement Talk</h3>
+                        <p class="text-[#334155] dark:text-[#94A3B8] mb-4 leading-relaxed">
+                            Recruiting organizations conduct pre-placement talks to introduce their company, roles, 
+                            compensation packages, and career growth opportunities to shortlisted students.
+                        </p>
+                        <ul class="list-disc list-inside space-y-2 text-[#334155] dark:text-[#94A3B8] ml-4">
+                            <li>Company presentation</li>
+                            <li>Role and responsibility overview</li>
+                            <li>Q&A session</li>
+                            <li>Application submission</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-6">
+                    <div class="flex-shrink-0 w-16 h-16 rounded-full bg-[#1E3A8A] dark:bg-[#3B82F6] text-white flex items-center justify-center font-bold text-2xl">4</div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-semibold mb-3 text-[#0F172A] dark:text-[#E5E7EB]">Aptitude & Technical Tests</h3>
+                        <p class="text-[#334155] dark:text-[#94A3B8] mb-4 leading-relaxed">
+                            Students undergo written tests including aptitude, technical knowledge, and domain-specific assessments 
+                            as per the requirements of the recruiting organization.
+                        </p>
+                        <ul class="list-disc list-inside space-y-2 text-[#334155] dark:text-[#94A3B8] ml-4">
+                            <li>Aptitude test</li>
+                            <li>Technical assessment</li>
+                            <li>Domain-specific questions</li>
+                            <li>Result announcement</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-6">
+                    <div class="flex-shrink-0 w-16 h-16 rounded-full bg-[#1E3A8A] dark:bg-[#3B82F6] text-white flex items-center justify-center font-bold text-2xl">5</div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-semibold mb-3 text-[#0F172A] dark:text-[#E5E7EB]">Group Discussion / Technical Interview</h3>
+                        <p class="text-[#334155] dark:text-[#94A3B8] mb-4 leading-relaxed">
+                            Qualified candidates participate in group discussions or technical interviews to assess 
+                            communication skills, problem-solving abilities, and technical expertise.
+                        </p>
+                        <ul class="list-disc list-inside space-y-2 text-[#334155] dark:text-[#94A3B8] ml-4">
+                            <li>Group discussion rounds</li>
+                            <li>Technical interview</li>
+                            <li>Problem-solving assessment</li>
+                            <li>Communication evaluation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-6">
+                    <div class="flex-shrink-0 w-16 h-16 rounded-full bg-[#1E3A8A] dark:bg-[#3B82F6] text-white flex items-center justify-center font-bold text-2xl">6</div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-semibold mb-3 text-[#0F172A] dark:text-[#E5E7EB]">HR Interview</h3>
+                        <p class="text-[#334155] dark:text-[#94A3B8] mb-4 leading-relaxed">
+                            Final round HR interviews assess cultural fit, career goals, and overall suitability. 
+                            Selected candidates receive offer letters with detailed terms and conditions.
+                        </p>
+                        <ul class="list-disc list-inside space-y-2 text-[#334155] dark:text-[#94A3B8] ml-4">
+                            <li>HR interview</li>
+                            <li>Final evaluation</li>
+                            <li>Offer letter issuance</li>
+                            <li>Acceptance confirmation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1E3A8A] dark:bg-[#0f172a] text-white py-12 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="assets/img/logo.svg" alt="Logo" class="h-10 w-10 footer-logo">
+                        <h3 class="text-xl font-semibold">Placement Cell</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm">Connecting students with leading organizations for successful career placements.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="text-gray-300 hover:text-white">About</a></li>
+                        <li><a href="process.html" class="text-gray-300 hover:text-white">Process</a></li>
+                        <li><a href="recruiters.html" class="text-gray-300 hover:text-white">Recruiters</a></li>
+                        <li><a href="statistics.html" class="text-gray-300 hover:text-white">Statistics</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li>Email: placement@university.edu</li>
+                        <li>Phone: +91 1234567890</li>
+                        <li>Address: University Campus</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2025 Placement Cell. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/dropdown.js"></script>
+</body>
+</html>
+

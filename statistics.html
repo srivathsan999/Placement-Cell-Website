@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Statistics</title>
+    <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+            color: #0F172A;
+        }
+        .dark body {
+            background-color: #020617;
+            color: #E5E7EB;
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+        }
+        h1 { font-weight: 700; }
+        h2 { font-weight: 600; }
+        h3 { font-weight: 600; }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="glass sticky top-0 z-50 border-b border-gray-200 dark:border-gray-800">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/img/logo.svg" alt="Logo" class="h-10 w-10">
+                    <span class="text-xl font-semibold text-[#1E3A8A] dark:text-[#3B82F6]">Placement Cell</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">Home</a>
+                    <a href="about.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">About</a>
+                    <a href="process.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">Process</a>
+                    <a href="recruiters.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">Recruiters</a>
+                    <a href="statistics.html" class="text-[#1E3A8A] dark:text-[#3B82F6] font-medium">Statistics</a>
+                    <a href="contact.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">Contact</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="px-4 py-2 text-sm font-medium text-[#0F172A] dark:text-[#E5E7EB]">🌙 Dark</button>
+                    <div class="dropdown">
+                        <button class="dropdown-button neu-button px-4 py-2 text-sm font-medium text-[#1E3A8A] dark:text-[#3B82F6]">Login</button>
+                        <div class="dropdown-menu">
+                            <a href="student-login.html" class="dropdown-item">Student Login</a>
+                            <a href="recruiter-login.html" class="dropdown-item">Recruiter Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="py-12 px-4 bg-[#F8FAFC] dark:bg-[#020617]">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-[#0F172A] dark:text-[#E5E7EB]">Placement Statistics</h1>
+            <p class="text-lg text-[#334155] dark:text-[#94A3B8]">Data-driven insights into our placement performance</p>
+        </div>
+    </section>
+
+    <!-- Key Statistics -->
+    <section class="py-16 px-4 bg-white dark:bg-[#1e293b]">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl font-semibold text-center mb-12 text-[#0F172A] dark:text-[#E5E7EB]">Key Metrics</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="neu-card p-6 text-center">
+                    <div class="text-4xl font-bold text-[#1E3A8A] dark:text-[#3B82F6] mb-2">580+</div>
+                    <div class="text-[#334155] dark:text-[#94A3B8]">Total Placements</div>
+                </div>
+                <div class="neu-card p-6 text-center">
+                    <div class="text-4xl font-bold text-[#16A34A] mb-2">92%</div>
+                    <div class="text-[#334155] dark:text-[#94A3B8]">Placement Rate</div>
+                </div>
+                <div class="neu-card p-6 text-center">
+                    <div class="text-4xl font-bold text-[#0EA5E9] mb-2">₹12L</div>
+                    <div class="text-[#334155] dark:text-[#94A3B8]">Average Package</div>
+                </div>
+                <div class="neu-card p-6 text-center">
+                    <div class="text-4xl font-bold text-[#1E3A8A] dark:text-[#3B82F6] mb-2">₹28L</div>
+                    <div class="text-[#334155] dark:text-[#94A3B8]">Highest Package</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Year-wise Statistics -->
+    <section class="py-16 px-4 bg-[#F8FAFC] dark:bg-[#020617]">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl font-semibold text-center mb-12 text-[#0F172A] dark:text-[#E5E7EB]">Year-wise Placements</h2>
+            <div class="neu-card p-6">
+                <canvas id="yearChart" style="height: 300px;"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Department-wise Statistics -->
+    <section class="py-16 px-4 bg-white dark:bg-[#1e293b]">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl font-semibold text-center mb-12 text-[#0F172A] dark:text-[#E5E7EB]">Department-wise Distribution</h2>
+            <div class="neu-card p-6">
+                <canvas id="deptChart" style="height: 300px;"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Statistics Table -->
+    <section class="py-16 px-4 bg-[#F8FAFC] dark:bg-[#020617]">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl font-semibold text-center mb-12 text-[#0F172A] dark:text-[#E5E7EB]">Year-wise Breakdown</h2>
+            <div class="neu-card p-6 overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="border-b border-gray-300 dark:border-gray-700">
+                            <th class="text-left py-3 px-4 font-semibold text-[#0F172A] dark:text-[#E5E7EB]">Year</th>
+                            <th class="text-left py-3 px-4 font-semibold text-[#0F172A] dark:text-[#E5E7EB]">Total Students</th>
+                            <th class="text-left py-3 px-4 font-semibold text-[#0F172A] dark:text-[#E5E7EB]">Placed</th>
+                            <th class="text-left py-3 px-4 font-semibold text-[#0F172A] dark:text-[#E5E7EB]">Placement Rate</th>
+                            <th class="text-left py-3 px-4 font-semibold text-[#0F172A] dark:text-[#E5E7EB]">Avg Package</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-200 dark:border-gray-800">
+                            <td class="py-3 px-4 text-[#334155] dark:text-[#94A3B8]">2024</td>
+                            <td class="py-3 px-4 text-[#334155] dark:text-[#94A3B8]">630</td>
+                            <td class="py-3 px-4 text-[#334155] dark:text-[#94A3B8]">580</td>
+                            <td class="py-3 px-4 text-[#16A34A] font-semibold">92%</td>
+                            <td class="py-3 px-4 text-[#334155] dark:text-[#94A3B8]">₹12 LPA</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 dark:border-gray-800">
+                            <td class="py-3 px-4 text-[#334155] dark:text-[#94A3B8]">2023</td>
+                            <td class="py-3 px-4 text-[#334155] dark:text-[#94A3B8]">565</td>
+                            <td class="py-3 px-4 text-[#334155] dark:text-[#94A3B8]">520</td>
+                            <td class="py-3 px-4 text-[#16A34A] font-semibold">92%</td>
+                            <td class="py-3 px-4 text-[#334155] dark:text-[#94A3B8]">₹11.5 LPA</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 dark:border-gray-800">
+                            <td class="py-3 px-4 text-[#334155] dark:text-[#94A3B8]">2022</td>
+                            <td class="py-3 px-4 text-[#334155] dark:text-[#94A3B8]">490</td>
+                            <td class="py-3 px-4 text-[#334155] dark:text-[#94A3B8]">450</td>
+                            <td class="py-3 px-4 text-[#16A34A] font-semibold">92%</td>
+                            <td class="py-3 px-4 text-[#334155] dark:text-[#94A3B8]">₹10.8 LPA</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 dark:border-gray-800">
+                            <td class="py-3 px-4 text-[#334155] dark:text-[#94A3B8]">2021</td>
+                            <td class="py-3 px-4 text-[#334155] dark:text-[#94A3B8]">415</td>
+                            <td class="py-3 px-4 text-[#334155] dark:text-[#94A3B8]">380</td>
+                            <td class="py-3 px-4 text-[#16A34A] font-semibold">92%</td>
+                            <td class="py-3 px-4 text-[#334155] dark:text-[#94A3B8]">₹9.5 LPA</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 text-[#334155] dark:text-[#94A3B8]">2020</td>
+                            <td class="py-3 px-4 text-[#334155] dark:text-[#94A3B8]">350</td>
+                            <td class="py-3 px-4 text-[#334155] dark:text-[#94A3B8]">320</td>
+                            <td class="py-3 px-4 text-[#16A34A] font-semibold">91%</td>
+                            <td class="py-3 px-4 text-[#334155] dark:text-[#94A3B8]">₹8.5 LPA</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1E3A8A] dark:bg-[#0f172a] text-white py-12 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="assets/img/logo.svg" alt="Logo" class="h-10 w-10 footer-logo">
+                        <h3 class="text-xl font-semibold">Placement Cell</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm">Connecting students with leading organizations for successful career placements.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="text-gray-300 hover:text-white">About</a></li>
+                        <li><a href="process.html" class="text-gray-300 hover:text-white">Process</a></li>
+                        <li><a href="recruiters.html" class="text-gray-300 hover:text-white">Recruiters</a></li>
+                        <li><a href="statistics.html" class="text-gray-300 hover:text-white">Statistics</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li>Email: placement@university.edu</li>
+                        <li>Phone: +91 1234567890</li>
+                        <li>Address: University Campus</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2025 Placement Cell. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/dropdown.js"></script>
+    <script src="assets/js/charts.js"></script>
+</body>
+</html>
+

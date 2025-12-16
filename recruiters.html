@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruiters</title>
+    <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+            color: #0F172A;
+        }
+        .dark body {
+            background-color: #020617;
+            color: #E5E7EB;
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+        }
+        h1 { font-weight: 700; }
+        h2 { font-weight: 600; }
+        h3 { font-weight: 600; }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="glass sticky top-0 z-50 border-b border-gray-200 dark:border-gray-800">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/img/logo.svg" alt="Logo" class="h-10 w-10">
+                    <span class="text-xl font-semibold text-[#1E3A8A] dark:text-[#3B82F6]">Placement Cell</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">Home</a>
+                    <a href="about.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">About</a>
+                    <a href="process.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">Process</a>
+                    <a href="recruiters.html" class="text-[#1E3A8A] dark:text-[#3B82F6] font-medium">Recruiters</a>
+                    <a href="statistics.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">Statistics</a>
+                    <a href="contact.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">Contact</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="px-4 py-2 text-sm font-medium text-[#0F172A] dark:text-[#E5E7EB]">🌙 Dark</button>
+                    <div class="dropdown">
+                        <button class="dropdown-button neu-button px-4 py-2 text-sm font-medium text-[#1E3A8A] dark:text-[#3B82F6]">Login</button>
+                        <div class="dropdown-menu">
+                            <a href="student-login.html" class="dropdown-item">Student Login</a>
+                            <a href="recruiter-login.html" class="dropdown-item">Recruiter Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="py-12 px-4 bg-[#F8FAFC] dark:bg-[#020617]">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-[#0F172A] dark:text-[#E5E7EB]">Our Recruiting Partners</h1>
+            <p class="text-lg text-[#334155] dark:text-[#94A3B8]">Leading organizations that trust us for talent acquisition</p>
+        </div>
+    </section>
+
+    <!-- Technology Companies -->
+    <section class="py-16 px-4 bg-white dark:bg-[#1e293b]">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-2xl font-semibold mb-8 text-[#0F172A] dark:text-[#E5E7EB]">Technology</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-container">
+                        <img src="assets/img/recruiters/techcorp.svg" alt="TechCorp Logo">
+                    </div>
+                    <h3 class="recruiter-name">TechCorp</h3>
+                    <p class="recruiter-industry">Software Development</p>
+                    <p class="recruiter-info">📍 Bangalore, India</p>
+                    <div class="recruiter-stats">
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">45+</div>
+                            <div class="recruiter-stat-label">Placements</div>
+                        </div>
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">₹15L</div>
+                            <div class="recruiter-stat-label">Avg Package</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-container">
+                        <img src="assets/img/recruiters/datasys.svg" alt="DataSys Logo">
+                    </div>
+                    <h3 class="recruiter-name">DataSys</h3>
+                    <p class="recruiter-industry">Data Analytics</p>
+                    <p class="recruiter-info">📍 Hyderabad, India</p>
+                    <div class="recruiter-stats">
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">32+</div>
+                            <div class="recruiter-stat-label">Placements</div>
+                        </div>
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">₹12L</div>
+                            <div class="recruiter-stat-label">Avg Package</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-container">
+                        <img src="assets/img/recruiters/cloudtech.svg" alt="CloudTech Logo">
+                    </div>
+                    <h3 class="recruiter-name">CloudTech</h3>
+                    <p class="recruiter-industry">Cloud Solutions</p>
+                    <p class="recruiter-info">📍 Pune, India</p>
+                    <div class="recruiter-stats">
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">28+</div>
+                            <div class="recruiter-stat-label">Placements</div>
+                        </div>
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">₹14L</div>
+                            <div class="recruiter-stat-label">Avg Package</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-container">
+                        <img src="assets/img/recruiters/softdev.svg" alt="SoftDev Logo">
+                    </div>
+                    <h3 class="recruiter-name">SoftDev</h3>
+                    <p class="recruiter-industry">Enterprise Software</p>
+                    <p class="recruiter-info">📍 Chennai, India</p>
+                    <div class="recruiter-stats">
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">38+</div>
+                            <div class="recruiter-stat-label">Placements</div>
+                        </div>
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">₹13L</div>
+                            <div class="recruiter-stat-label">Avg Package</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-container">
+                        <img src="assets/img/recruiters/infosys.svg" alt="InfoSys Logo">
+                    </div>
+                    <h3 class="recruiter-name">InfoSys</h3>
+                    <p class="recruiter-industry">IT Services</p>
+                    <p class="recruiter-info">📍 Mumbai, India</p>
+                    <div class="recruiter-stats">
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">52+</div>
+                            <div class="recruiter-stat-label">Placements</div>
+                        </div>
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">₹11L</div>
+                            <div class="recruiter-stat-label">Avg Package</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-container">
+                        <img src="assets/img/recruiters/netsol.svg" alt="NetSol Logo">
+                    </div>
+                    <h3 class="recruiter-name">NetSol</h3>
+                    <p class="recruiter-industry">Network Solutions</p>
+                    <p class="recruiter-info">📍 Delhi, India</p>
+                    <div class="recruiter-stats">
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">25+</div>
+                            <div class="recruiter-stat-label">Placements</div>
+                        </div>
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">₹10L</div>
+                            <div class="recruiter-stat-label">Avg Package</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Finance & Banking -->
+    <section class="py-16 px-4 bg-[#F8FAFC] dark:bg-[#020617]">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-2xl font-semibold mb-8 text-[#0F172A] dark:text-[#E5E7EB]">Finance & Banking</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-container">
+                        <img src="assets/img/recruiters/bankone.svg" alt="BankOne Logo">
+                    </div>
+                    <h3 class="recruiter-name">BankOne</h3>
+                    <p class="recruiter-industry">Banking Services</p>
+                    <p class="recruiter-info">📍 Mumbai, India</p>
+                    <div class="recruiter-stats">
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">40+</div>
+                            <div class="recruiter-stat-label">Placements</div>
+                        </div>
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">₹13L</div>
+                            <div class="recruiter-stat-label">Avg Package</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-container">
+                        <img src="assets/img/recruiters/financehub.svg" alt="FinanceHub Logo">
+                    </div>
+                    <h3 class="recruiter-name">FinanceHub</h3>
+                    <p class="recruiter-industry">Financial Services</p>
+                    <p class="recruiter-info">📍 Bangalore, India</p>
+                    <div class="recruiter-stats">
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">35+</div>
+                            <div class="recruiter-stat-label">Placements</div>
+                        </div>
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">₹14L</div>
+                            <div class="recruiter-stat-label">Avg Package</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-container">
+                        <img src="assets/img/recruiters/capitalcorp.svg" alt="CapitalCorp Logo">
+                    </div>
+                    <h3 class="recruiter-name">CapitalCorp</h3>
+                    <p class="recruiter-industry">Investment Banking</p>
+                    <p class="recruiter-info">📍 Delhi, India</p>
+                    <div class="recruiter-stats">
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">22+</div>
+                            <div class="recruiter-stat-label">Placements</div>
+                        </div>
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">₹18L</div>
+                            <div class="recruiter-stat-label">Avg Package</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-container">
+                        <img src="assets/img/recruiters/investpro.svg" alt="InvestPro Logo">
+                    </div>
+                    <h3 class="recruiter-name">InvestPro</h3>
+                    <p class="recruiter-industry">Asset Management</p>
+                    <p class="recruiter-info">📍 Hyderabad, India</p>
+                    <div class="recruiter-stats">
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">18+</div>
+                            <div class="recruiter-stat-label">Placements</div>
+                        </div>
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">₹16L</div>
+                            <div class="recruiter-stat-label">Avg Package</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-container">
+                        <img src="assets/img/recruiters/wealthbank.svg" alt="WealthBank Logo">
+                    </div>
+                    <h3 class="recruiter-name">WealthBank</h3>
+                    <p class="recruiter-industry">Private Banking</p>
+                    <p class="recruiter-info">📍 Pune, India</p>
+                    <div class="recruiter-stats">
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">30+</div>
+                            <div class="recruiter-stat-label">Placements</div>
+                        </div>
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">₹15L</div>
+                            <div class="recruiter-stat-label">Avg Package</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-container">
+                        <img src="assets/img/recruiters/moneyflow.svg" alt="MoneyFlow Logo">
+                    </div>
+                    <h3 class="recruiter-name">MoneyFlow</h3>
+                    <p class="recruiter-industry">FinTech</p>
+                    <p class="recruiter-info">📍 Chennai, India</p>
+                    <div class="recruiter-stats">
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">27+</div>
+                            <div class="recruiter-stat-label">Placements</div>
+                        </div>
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">₹12L</div>
+                            <div class="recruiter-stat-label">Avg Package</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manufacturing & Engineering -->
+    <section class="py-16 px-4 bg-white dark:bg-[#1e293b]">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-2xl font-semibold mb-8 text-[#0F172A] dark:text-[#E5E7EB]">Manufacturing & Engineering</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-container">
+                        <img src="assets/img/recruiters/engitech.svg" alt="EngiTech Logo">
+                    </div>
+                    <h3 class="recruiter-name">EngiTech</h3>
+                    <p class="recruiter-industry">Engineering Solutions</p>
+                    <p class="recruiter-info">📍 Bangalore, India</p>
+                    <div class="recruiter-stats">
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">42+</div>
+                            <div class="recruiter-stat-label">Placements</div>
+                        </div>
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">₹11L</div>
+                            <div class="recruiter-stat-label">Avg Package</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-container">
+                        <img src="assets/img/recruiters/manucorp.svg" alt="ManuCorp Logo">
+                    </div>
+                    <h3 class="recruiter-name">ManuCorp</h3>
+                    <p class="recruiter-industry">Manufacturing</p>
+                    <p class="recruiter-info">📍 Pune, India</p>
+                    <div class="recruiter-stats">
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">36+</div>
+                            <div class="recruiter-stat-label">Placements</div>
+                        </div>
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">₹10L</div>
+                            <div class="recruiter-stat-label">Avg Package</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-container">
+                        <img src="assets/img/recruiters/buildsys.svg" alt="BuildSys Logo">
+                    </div>
+                    <h3 class="recruiter-name">BuildSys</h3>
+                    <p class="recruiter-industry">Construction Tech</p>
+                    <p class="recruiter-info">📍 Mumbai, India</p>
+                    <div class="recruiter-stats">
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">29+</div>
+                            <div class="recruiter-stat-label">Placements</div>
+                        </div>
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">₹9L</div>
+                            <div class="recruiter-stat-label">Avg Package</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-container">
+                        <img src="assets/img/recruiters/autotech.svg" alt="AutoTech Logo">
+                    </div>
+                    <h3 class="recruiter-name">AutoTech</h3>
+                    <p class="recruiter-industry">Automotive</p>
+                    <p class="recruiter-info">📍 Chennai, India</p>
+                    <div class="recruiter-stats">
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">33+</div>
+                            <div class="recruiter-stat-label">Placements</div>
+                        </div>
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">₹12L</div>
+                            <div class="recruiter-stat-label">Avg Package</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-container">
+                        <img src="assets/img/recruiters/mechpro.svg" alt="MechPro Logo">
+                    </div>
+                    <h3 class="recruiter-name">MechPro</h3>
+                    <p class="recruiter-industry">Mechanical Engineering</p>
+                    <p class="recruiter-info">📍 Delhi, India</p>
+                    <div class="recruiter-stats">
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">31+</div>
+                            <div class="recruiter-stat-label">Placements</div>
+                        </div>
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">₹10L</div>
+                            <div class="recruiter-stat-label">Avg Package</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-container">
+                        <img src="assets/img/recruiters/induworks.svg" alt="InduWorks Logo">
+                    </div>
+                    <h3 class="recruiter-name">InduWorks</h3>
+                    <p class="recruiter-industry">Industrial Solutions</p>
+                    <p class="recruiter-info">📍 Hyderabad, India</p>
+                    <div class="recruiter-stats">
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">26+</div>
+                            <div class="recruiter-stat-label">Placements</div>
+                        </div>
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">₹9L</div>
+                            <div class="recruiter-stat-label">Avg Package</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consulting -->
+    <section class="py-16 px-4 bg-[#F8FAFC] dark:bg-[#020617]">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-2xl font-semibold mb-8 text-[#0F172A] dark:text-[#E5E7EB]">Consulting</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-container">
+                        <img src="assets/img/recruiters/consultpro.svg" alt="ConsultPro Logo">
+                    </div>
+                    <h3 class="recruiter-name">ConsultPro</h3>
+                    <p class="recruiter-industry">Management Consulting</p>
+                    <p class="recruiter-info">📍 Mumbai, India</p>
+                    <div class="recruiter-stats">
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">20+</div>
+                            <div class="recruiter-stat-label">Placements</div>
+                        </div>
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">₹20L</div>
+                            <div class="recruiter-stat-label">Avg Package</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-container">
+                        <img src="assets/img/recruiters/strategyhub.svg" alt="StrategyHub Logo">
+                    </div>
+                    <h3 class="recruiter-name">StrategyHub</h3>
+                    <p class="recruiter-industry">Strategic Consulting</p>
+                    <p class="recruiter-info">📍 Delhi, India</p>
+                    <div class="recruiter-stats">
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">15+</div>
+                            <div class="recruiter-stat-label">Placements</div>
+                        </div>
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">₹22L</div>
+                            <div class="recruiter-stat-label">Avg Package</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-container">
+                        <img src="assets/img/recruiters/advisorygroup.svg" alt="AdvisoryGroup Logo">
+                    </div>
+                    <h3 class="recruiter-name">AdvisoryGroup</h3>
+                    <p class="recruiter-industry">Business Advisory</p>
+                    <p class="recruiter-info">📍 Bangalore, India</p>
+                    <div class="recruiter-stats">
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">24+</div>
+                            <div class="recruiter-stat-label">Placements</div>
+                        </div>
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">₹18L</div>
+                            <div class="recruiter-stat-label">Avg Package</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-container">
+                        <img src="assets/img/recruiters/bizconsult.svg" alt="BizConsult Logo">
+                    </div>
+                    <h3 class="recruiter-name">BizConsult</h3>
+                    <p class="recruiter-industry">Business Consulting</p>
+                    <p class="recruiter-info">📍 Pune, India</p>
+                    <div class="recruiter-stats">
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">19+</div>
+                            <div class="recruiter-stat-label">Placements</div>
+                        </div>
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">₹17L</div>
+                            <div class="recruiter-stat-label">Avg Package</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-container">
+                        <img src="assets/img/recruiters/expertadvisors.svg" alt="ExpertAdvisors Logo">
+                    </div>
+                    <h3 class="recruiter-name">ExpertAdvisors</h3>
+                    <p class="recruiter-industry">Expert Consulting</p>
+                    <p class="recruiter-info">📍 Chennai, India</p>
+                    <div class="recruiter-stats">
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">17+</div>
+                            <div class="recruiter-stat-label">Placements</div>
+                        </div>
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">₹19L</div>
+                            <div class="recruiter-stat-label">Avg Package</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-container">
+                        <img src="assets/img/recruiters/thinktank.svg" alt="ThinkTank Logo">
+                    </div>
+                    <h3 class="recruiter-name">ThinkTank</h3>
+                    <p class="recruiter-industry">Research & Strategy</p>
+                    <p class="recruiter-info">📍 Hyderabad, India</p>
+                    <div class="recruiter-stats">
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">21+</div>
+                            <div class="recruiter-stat-label">Placements</div>
+                        </div>
+                        <div class="recruiter-stat-item">
+                            <div class="recruiter-stat-value">₹16L</div>
+                            <div class="recruiter-stat-label">Avg Package</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1E3A8A] dark:bg-[#0f172a] text-white py-12 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="assets/img/logo.svg" alt="Logo" class="h-10 w-10 footer-logo">
+                        <h3 class="text-xl font-semibold">Placement Cell</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm">Connecting students with leading organizations for successful career placements.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="text-gray-300 hover:text-white">About</a></li>
+                        <li><a href="process.html" class="text-gray-300 hover:text-white">Process</a></li>
+                        <li><a href="recruiters.html" class="text-gray-300 hover:text-white">Recruiters</a></li>
+                        <li><a href="statistics.html" class="text-gray-300 hover:text-white">Statistics</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li>Email: placement@university.edu</li>
+                        <li>Phone: +91 1234567890</li>
+                        <li>Address: University Campus</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2025 Placement Cell. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/dropdown.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login</title>
+    <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+            color: #0F172A;
+        }
+        .dark body {
+            background-color: #020617;
+            color: #E5E7EB;
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+        }
+        h1 { font-weight: 700; }
+        h2 { font-weight: 600; }
+        h3 { font-weight: 600; }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center py-12 px-4">
+    <div class="w-full max-w-md">
+        <div class="glass p-8 rounded-lg">
+            <div class="text-center mb-8">
+                <img src="assets/img/logo.svg" alt="Logo" class="h-16 w-16 mx-auto mb-4">
+                <h1 class="text-2xl font-bold text-[#0F172A] dark:text-[#E5E7EB] mb-2">Student Portal</h1>
+                <p class="text-sm text-[#334155] dark:text-[#94A3B8]">Institutional Placement Cell</p>
+            </div>
+            <form class="space-y-6">
+                <div>
+                    <label for="student-id" class="block text-sm font-medium mb-2 text-[#0F172A] dark:text-[#E5E7EB]">Student ID</label>
+                    <input type="text" id="student-id" name="student-id" required class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-[#1e293b] text-[#0F172A] dark:text-[#E5E7EB] focus:outline-none focus:ring-2 focus:ring-[#1E3A8A] dark:focus:ring-[#3B82F6]">
+                </div>
+                <div>
+                    <label for="password" class="block text-sm font-medium mb-2 text-[#0F172A] dark:text-[#E5E7EB]">Password</label>
+                    <input type="password" id="password" name="password" required class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-[#1e293b] text-[#0F172A] dark:text-[#E5E7EB] focus:outline-none focus:ring-2 focus:ring-[#1E3A8A] dark:focus:ring-[#3B82F6]">
+                </div>
+                <div class="flex items-center justify-between">
+                    <label class="flex items-center">
+                        <input type="checkbox" class="rounded border-gray-300 dark:border-gray-700 text-[#1E3A8A] dark:text-[#3B82F6] focus:ring-[#1E3A8A] dark:focus:ring-[#3B82F6]">
+                        <span class="ml-2 text-sm text-[#334155] dark:text-[#94A3B8]">Remember me</span>
+                    </label>
+                    <a href="#" class="text-sm text-[#1E3A8A] dark:text-[#3B82F6] hover:underline">Forgot password?</a>
+                </div>
+                <button type="submit" class="w-full neu-button py-3 font-semibold text-[#1E3A8A] dark:text-[#3B82F6]">Login</button>
+            </form>
+            <div class="mt-6 text-center">
+                <p class="text-sm text-[#334155] dark:text-[#94A3B8]">
+                    Don't have an account? 
+                    <a href="contact.html" class="text-[#1E3A8A] dark:text-[#3B82F6] hover:underline">Contact Placement Cell</a>
+                </p>
+            </div>
+            <div class="mt-6 text-center">
+                <a href="index.html" class="text-sm text-[#334155] dark:text-[#94A3B8] hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">← Back to Home</a>
+            </div>
+        </div>
+        <div class="mt-4 text-center">
+            <button id="theme-toggle" class="text-sm text-[#334155] dark:text-[#94A3B8] hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">🌙 Dark Mode</button>
+        </div>
+    </div>
+
+    <script src="assets/js/theme.js"></script>
+</body>
+</html>
+
