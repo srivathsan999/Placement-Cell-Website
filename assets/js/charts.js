@@ -25,10 +25,10 @@
       yearChart = new Chart(yearCtx, {
         type: 'bar',
         data: {
-          labels: ['2020', '2021', '2022', '2023', '2024'],
+          labels: ['2020', '2021', '2022', '2023', '2024', '2025'],
           datasets: [{
             label: 'Placements',
-            data: [320, 380, 450, 520, 580],
+            data: [320, 380, 450, 520, 580, 620],
             backgroundColor: '#1E3A8A',
             borderColor: '#0EA5E9',
             borderWidth: 2
