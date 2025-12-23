@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Cell - Home2</title>
+    <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+            color: #0F172A;
+        }
+        .dark body {
+            background-color: #020617;
+            color: #E5E7EB;
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+        }
+        h1 { font-weight: 700; }
+        h2 { font-weight: 600; }
+        h3 { font-weight: 600; }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="glass sticky top-0 z-50 border-b border-gray-200 dark:border-gray-800">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-3 cursor-pointer hover:opacity-80 transition-opacity">
+                    <img src="assets/img/logo.svg" alt="Logo" class="h-10 w-10">
+                    <span class="text-xl font-semibold text-[#1E3A8A] dark:text-[#3B82F6]">Placement Cell</span>
+                </a>
+                <div class="desktop-nav hidden md:flex items-center space-x-6">
+                    <div class="dropdown">
+                        <button class="dropdown-button text-[#1E3A8A] dark:text-[#3B82F6] font-medium" aria-label="Home menu" aria-expanded="false">Home</button>
+                        <div class="dropdown-menu">
+                            <a href="index.html" class="dropdown-item">Home</a>
+                            <a href="home2.html" class="dropdown-item active">Home2</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">About</a>
+                    <a href="process.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">Process</a>
+                    <a href="recruiters.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">Recruiters</a>
+                    <a href="statistics.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">Statistics</a>
+                    <a href="contact.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">Contact</a>
+                    <a href="admin-dashboard.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">Dashboard</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="desktop-nav hidden md:flex items-center space-x-3">
+                        <button id="theme-toggle" class="px-3 py-2 text-lg" aria-label="Toggle theme"></button>
+                        <a href="student-login.html" class="px-4 py-2 text-sm font-medium text-white bg-[#1E3A8A] dark:bg-[#3B82F6] rounded-lg hover:opacity-90 transition-opacity">Student Login</a>
+                        <a href="recruiter-login.html" class="px-4 py-2 text-sm font-medium text-white bg-[#1E3A8A] dark:bg-[#3B82F6] rounded-lg hover:opacity-90 transition-opacity">Recruiter Login</a>
+                    </div>
+                    <button class="hamburger-button" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-content">
+            <div class="mobile-dropdown">
+                <button class="mobile-dropdown-button mobile-menu-link" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                    <span style="color: #1E3A8A; font-weight: 600;">Home</span>
+                    <span style="font-size: 12px;">▼</span>
+                </button>
+                <div class="mobile-dropdown-menu" style="display: none; padding-left: 16px; padding-top: 8px;">
+                    <a href="index.html" class="mobile-menu-link" style="padding-left: 32px;">Home</a>
+                    <a href="home2.html" class="mobile-menu-link" style="padding-left: 32px; color: #1E3A8A; font-weight: 600;">Home2</a>
+                </div>
+            </div>
+            <a href="about.html" class="mobile-menu-link">About</a>
+            <a href="process.html" class="mobile-menu-link">Process</a>
+            <a href="recruiters.html" class="mobile-menu-link">Recruiters</a>
+            <a href="statistics.html" class="mobile-menu-link">Statistics</a>
+            <a href="contact.html" class="mobile-menu-link">Contact</a>
+            <a href="admin-dashboard.html" class="mobile-menu-link">Dashboard</a>
+            <div class="mobile-menu-actions">
+                <button id="theme-toggle-mobile" class="w-full px-4 py-2 text-sm font-medium text-[#0F172A] dark:text-[#E5E7EB] bg-gray-100 dark:bg-gray-800 rounded-lg">🌙 Dark Mode</button>
+                <a href="student-login.html" class="block w-full text-center px-4 py-2 text-sm font-medium text-white bg-[#1E3A8A] dark:bg-[#3B82F6] rounded-lg">Student Login</a>
+                <a href="recruiter-login.html" class="block w-full text-center px-4 py-2 text-sm font-medium text-white bg-[#1E3A8A] dark:bg-[#3B82F6] rounded-lg">Recruiter Login</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section glass py-24 px-4 text-center">
+        <div class="container mx-auto max-w-4xl">
+            <div class="mb-8">
+                <img src="assets/img/logo.svg" alt="Logo" class="h-20 w-20 mx-auto mb-6 opacity-90">
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 text-[#0F172A] dark:text-[#E5E7EB] leading-tight">
+                Bridging Students and Careers
+            </h1>
+            <p class="text-xl md:text-2xl text-[#334155] dark:text-[#94A3B8] mb-10 max-w-2xl mx-auto leading-relaxed">
+                Empowering students with placements, internships, and career readiness programs. Connecting talent with leading organizations for successful career outcomes.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="statistics.html" class="hero-button">View Placement Statistics</a>
+                <a href="student-login.html" class="hero-button-secondary">Register for Placements</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Placement Highlights -->
+    <section class="py-20 px-4 bg-[#F8FAFC] dark:bg-[#020617]">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-[#0F172A] dark:text-[#E5E7EB]">Placement Highlights</h2>
+                <p class="text-lg text-[#64748B] dark:text-[#94A3B8] max-w-2xl mx-auto">Key metrics showcasing our commitment to student success</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="stat-card">
+                    <div class="stat-value success">92%</div>
+                    <div class="stat-label">Students Placed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value accent">₹28L</div>
+                    <div class="stat-label">Highest Package</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value text-[#1E3A8A] dark:text-[#3B82F6]">₹12L</div>
+                    <div class="stat-label">Average Package</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value text-[#1E3A8A] dark:text-[#3B82F6]">120+</div>
+                    <div class="stat-label">Number of Recruiters</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Recruiters -->
+    <section class="py-16 px-4 bg-white dark:bg-[#1e293b]">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl font-semibold text-center mb-12 text-[#0F172A] dark:text-[#E5E7EB]">Top Recruiters</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <div class="flex items-center justify-center p-4 bg-[#F8FAFC] dark:bg-[#0f172a] rounded-lg border border-gray-200 dark:border-gray-700 hover:border-[#1E3A8A] dark:hover:border-[#3B82F6] transition-colors">
+                    <img src="assets/img/recruiters/techcorp.svg" alt="TechCorp" class="h-12 w-12 object-contain">
+                </div>
+                <div class="flex items-center justify-center p-4 bg-[#F8FAFC] dark:bg-[#0f172a] rounded-lg border border-gray-200 dark:border-gray-700 hover:border-[#1E3A8A] dark:hover:border-[#3B82F6] transition-colors">
+                    <img src="assets/img/recruiters/bankone.svg" alt="BankOne" class="h-12 w-12 object-contain">
+                </div>
+                <div class="flex items-center justify-center p-4 bg-[#F8FAFC] dark:bg-[#0f172a] rounded-lg border border-gray-200 dark:border-gray-700 hover:border-[#1E3A8A] dark:hover:border-[#3B82F6] transition-colors">
+                    <img src="assets/img/recruiters/engitech.svg" alt="EngiTech" class="h-12 w-12 object-contain">
+                </div>
+                <div class="flex items-center justify-center p-4 bg-[#F8FAFC] dark:bg-[#0f172a] rounded-lg border border-gray-200 dark:border-gray-700 hover:border-[#1E3A8A] dark:hover:border-[#3B82F6] transition-colors">
+                    <img src="assets/img/recruiters/consultpro.svg" alt="ConsultPro" class="h-12 w-12 object-contain">
+                </div>
+                <div class="flex items-center justify-center p-4 bg-[#F8FAFC] dark:bg-[#0f172a] rounded-lg border border-gray-200 dark:border-gray-700 hover:border-[#1E3A8A] dark:hover:border-[#3B82F6] transition-colors">
+                    <img src="assets/img/recruiters/datasys.svg" alt="DataSys" class="h-12 w-12 object-contain">
+                </div>
+                <div class="flex items-center justify-center p-4 bg-[#F8FAFC] dark:bg-[#0f172a] rounded-lg border border-gray-200 dark:border-gray-700 hover:border-[#1E3A8A] dark:hover:border-[#3B82F6] transition-colors">
+                    <img src="assets/img/recruiters/financehub.svg" alt="FinanceHub" class="h-12 w-12 object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Opportunities -->
+    <section class="py-20 px-4 bg-[#F8FAFC] dark:bg-[#020617]">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-[#0F172A] dark:text-[#E5E7EB]">Student Opportunities</h2>
+                <p class="text-lg text-[#64748B] dark:text-[#94A3B8] max-w-2xl mx-auto">Comprehensive programs designed to launch your career</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div class="neu-card p-6 text-center">
+                    <div class="mb-4">
+                        <svg class="w-16 h-16 mx-auto text-[#1E3A8A] dark:text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-[#0F172A] dark:text-[#E5E7EB]">Full-Time Placements</h3>
+                    <p class="text-sm text-[#64748B] dark:text-[#94A3B8] mb-4">Secure permanent positions with leading organizations across diverse industries.</p>
+                </div>
+                <div class="neu-card p-6 text-center">
+                    <div class="mb-4">
+                        <svg class="w-16 h-16 mx-auto text-[#1E3A8A] dark:text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-[#0F172A] dark:text-[#E5E7EB]">Internships</h3>
+                    <p class="text-sm text-[#64748B] dark:text-[#94A3B8] mb-4">Gain practical experience through structured internship programs with industry partners.</p>
+                </div>
+                <div class="neu-card p-6 text-center">
+                    <div class="mb-4">
+                        <svg class="w-16 h-16 mx-auto text-[#1E3A8A] dark:text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-[#0F172A] dark:text-[#E5E7EB]">Training Programs</h3>
+                    <p class="text-sm text-[#64748B] dark:text-[#94A3B8] mb-4">Enhance your skills with specialized training in technical and soft skills development.</p>
+                </div>
+                <div class="neu-card p-6 text-center">
+                    <div class="mb-4">
+                        <svg class="w-16 h-16 mx-auto text-[#1E3A8A] dark:text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-[#0F172A] dark:text-[#E5E7EB]">Career Guidance</h3>
+                    <p class="text-sm text-[#64748B] dark:text-[#94A3B8] mb-4">Receive personalized career counseling and mentorship from industry experts.</p>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="student-login.html" class="hero-button">Explore Opportunities</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Placement Process -->
+    <section class="py-20 px-4 bg-white dark:bg-[#1e293b]">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-[#0F172A] dark:text-[#E5E7EB]">Placement Process</h2>
+                <p class="text-lg text-[#64748B] dark:text-[#94A3B8] max-w-2xl mx-auto">A structured pathway from registration to job offers</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+                <div class="neu-card p-6 text-center transition-all duration-300 hover:transform hover:translate-y-[-8px] hover:shadow-lg cursor-pointer">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-[#1E3A8A] dark:bg-[#3B82F6] text-white flex items-center justify-center text-2xl font-bold transition-transform duration-300 hover:scale-110">1</div>
+                    <h3 class="text-lg font-semibold mb-2 text-[#0F172A] dark:text-[#E5E7EB]">Registration</h3>
+                    <p class="text-sm text-[#64748B] dark:text-[#94A3B8]">Student registration and profile creation</p>
+                </div>
+                <div class="neu-card p-6 text-center transition-all duration-300 hover:transform hover:translate-y-[-8px] hover:shadow-lg cursor-pointer">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-[#1E3A8A] dark:bg-[#3B82F6] text-white flex items-center justify-center text-2xl font-bold transition-transform duration-300 hover:scale-110">2</div>
+                    <h3 class="text-lg font-semibold mb-2 text-[#0F172A] dark:text-[#E5E7EB]">Training</h3>
+                    <p class="text-sm text-[#64748B] dark:text-[#94A3B8]">Skill development and preparation</p>
+                </div>
+                <div class="neu-card p-6 text-center transition-all duration-300 hover:transform hover:translate-y-[-8px] hover:shadow-lg cursor-pointer">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-[#1E3A8A] dark:bg-[#3B82F6] text-white flex items-center justify-center text-2xl font-bold transition-transform duration-300 hover:scale-110">3</div>
+                    <h3 class="text-lg font-semibold mb-2 text-[#0F172A] dark:text-[#E5E7EB]">Assessment</h3>
+                    <p class="text-sm text-[#64748B] dark:text-[#94A3B8]">Aptitude and technical evaluation</p>
+                </div>
+                <div class="neu-card p-6 text-center transition-all duration-300 hover:transform hover:translate-y-[-8px] hover:shadow-lg cursor-pointer">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-[#1E3A8A] dark:bg-[#3B82F6] text-white flex items-center justify-center text-2xl font-bold transition-transform duration-300 hover:scale-110">4</div>
+                    <h3 class="text-lg font-semibold mb-2 text-[#0F172A] dark:text-[#E5E7EB]">Interviews</h3>
+                    <p class="text-sm text-[#64748B] dark:text-[#94A3B8]">Company interviews and selection</p>
+                </div>
+                <div class="neu-card p-6 text-center transition-all duration-300 hover:transform hover:translate-y-[-8px] hover:shadow-lg cursor-pointer">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-[#1E3A8A] dark:bg-[#3B82F6] text-white flex items-center justify-center text-2xl font-bold transition-transform duration-300 hover:scale-110">5</div>
+                    <h3 class="text-lg font-semibold mb-2 text-[#0F172A] dark:text-[#E5E7EB]">Offers</h3>
+                    <p class="text-sm text-[#64748B] dark:text-[#94A3B8]">Job offers and placement confirmation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories / Testimonials -->
+    <section class="py-20 px-4 bg-[#F8FAFC] dark:bg-[#020617]">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-[#0F172A] dark:text-[#E5E7EB]">Success Stories</h2>
+                <p class="text-lg text-[#64748B] dark:text-[#94A3B8] max-w-2xl mx-auto">Hear from our placed students about their career journeys</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="neu-card p-6">
+                    <div class="mb-4">
+                        <svg class="w-8 h-8 text-[#1E3A8A] dark:text-[#3B82F6]" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.984zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.432.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                        </svg>
+                    </div>
+                    <p class="text-[#64748B] dark:text-[#94A3B8] mb-4 italic">"The placement cell provided excellent support throughout the recruitment process. I secured a position at TechCorp as a Software Engineer with a package of ₹15L."</p>
+                    <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
+                        <p class="font-semibold text-[#0F172A] dark:text-[#E5E7EB]">Priya Sharma</p>
+                        <p class="text-sm text-[#0EA5E9]">Software Engineer, TechCorp</p>
+                    </div>
+                </div>
+                <div class="neu-card p-6">
+                    <div class="mb-4">
+                        <svg class="w-8 h-8 text-[#1E3A8A] dark:text-[#3B82F6]" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.984zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.432.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                        </svg>
+                    </div>
+                    <p class="text-[#64748B] dark:text-[#94A3B8] mb-4 italic">"Thanks to the training programs and career guidance, I was well-prepared for interviews. I'm now working as a Data Analyst at DataSys with ₹12L package."</p>
+                    <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
+                        <p class="font-semibold text-[#0F172A] dark:text-[#E5E7EB]">Rahul Kumar</p>
+                        <p class="text-sm text-[#0EA5E9]">Data Analyst, DataSys</p>
+                    </div>
+                </div>
+                <div class="neu-card p-6">
+                    <div class="mb-4">
+                        <svg class="w-8 h-8 text-[#1E3A8A] dark:text-[#3B82F6]" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.984zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.432.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                        </svg>
+                    </div>
+                    <p class="text-[#64748B] dark:text-[#94A3B8] mb-4 italic">"The placement cell connected me with top recruiters. I received multiple offers and chose ConsultPro as a Management Consultant with ₹20L package."</p>
+                    <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
+                        <p class="font-semibold text-[#0F172A] dark:text-[#E5E7EB]">Anjali Patel</p>
+                        <p class="text-sm text-[#0EA5E9]">Management Consultant, ConsultPro</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notices & Upcoming Drives -->
+    <section class="py-20 px-4 bg-white dark:bg-[#1e293b]">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-[#0F172A] dark:text-[#E5E7EB]">Notices & Upcoming Drives</h2>
+                <p class="text-lg text-[#64748B] dark:text-[#94A3B8] max-w-2xl mx-auto">Stay updated with the latest placement opportunities</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                <div class="neu-card p-6 border-l-4 border-[#1E3A8A] dark:border-[#3B82F6]">
+                    <div class="flex items-start justify-between mb-3">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-2 text-[#0F172A] dark:text-[#E5E7EB]">TechCorp Recruitment Drive</h3>
+                            <p class="text-sm text-[#64748B] dark:text-[#94A3B8] mb-2">Date: March 15, 2025</p>
+                            <p class="text-sm text-[#64748B] dark:text-[#94A3B8]">Eligibility: B.Tech (CS/IT), CGPA ≥ 7.5</p>
+                        </div>
+                        <span class="px-3 py-1 text-xs font-semibold bg-[#1E3A8A] dark:bg-[#3B82F6] text-white rounded-full">Upcoming</span>
+                    </div>
+                </div>
+                <div class="neu-card p-6 border-l-4 border-[#1E3A8A] dark:border-[#3B82F6]">
+                    <div class="flex items-start justify-between mb-3">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-2 text-[#0F172A] dark:text-[#E5E7EB]">DataSys Internship Program</h3>
+                            <p class="text-sm text-[#64748B] dark:text-[#94A3B8] mb-2">Date: March 20, 2025</p>
+                            <p class="text-sm text-[#64748B] dark:text-[#94A3B8]">Eligibility: B.Tech/M.Tech (All Branches), CGPA ≥ 7.0</p>
+                        </div>
+                        <span class="px-3 py-1 text-xs font-semibold bg-[#1E3A8A] dark:bg-[#3B82F6] text-white rounded-full">Upcoming</span>
+                    </div>
+                </div>
+                <div class="neu-card p-6 border-l-4 border-[#1E3A8A] dark:border-[#3B82F6]">
+                    <div class="flex items-start justify-between mb-3">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-2 text-[#0F172A] dark:text-[#E5E7EB]">BankOne Campus Recruitment</h3>
+                            <p class="text-sm text-[#64748B] dark:text-[#94A3B8] mb-2">Date: March 25, 2025</p>
+                            <p class="text-sm text-[#64748B] dark:text-[#94A3B8]">Eligibility: B.Tech/MBA, CGPA ≥ 7.5</p>
+                        </div>
+                        <span class="px-3 py-1 text-xs font-semibold bg-[#1E3A8A] dark:bg-[#3B82F6] text-white rounded-full">Upcoming</span>
+                    </div>
+                </div>
+                <div class="neu-card p-6 border-l-4 border-[#1E3A8A] dark:border-[#3B82F6]">
+                    <div class="flex items-start justify-between mb-3">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-2 text-[#0F172A] dark:text-[#E5E7EB]">ConsultPro Management Trainee</h3>
+                            <p class="text-sm text-[#64748B] dark:text-[#94A3B8] mb-2">Date: April 1, 2025</p>
+                            <p class="text-sm text-[#64748B] dark:text-[#94A3B8]">Eligibility: MBA, CGPA ≥ 8.0</p>
+                        </div>
+                        <span class="px-3 py-1 text-xs font-semibold bg-[#1E3A8A] dark:bg-[#3B82F6] text-white rounded-full">Upcoming</span>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="student-login.html" class="hero-button">View All Drives</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Call-to-Action -->
+    <section class="py-20 px-4 bg-[#1E3A8A] dark:bg-[#0f172a]">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">Prepare for Your Career Journey</h2>
+            <p class="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">Join thousands of successful students who have launched their careers through our placement cell. Start your journey today.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="student-login.html" class="inline-block bg-white text-[#1E3A8A] border-2 border-white rounded-lg px-8 py-3 font-semibold hover:bg-blue-50 hover:border-blue-50 transition-all">Register Now</a>
+                <a href="about.html" class="inline-block bg-transparent border-2 border-white text-white rounded-lg px-8 py-3 font-semibold hover:bg-white hover:text-[#1E3A8A] transition-all">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1E3A8A] dark:bg-[#0f172a] text-white py-12 px-4 border-t-2 border-blue-300 dark:border-gray-700">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="assets/img/logo.svg" alt="Logo" class="h-10 w-10">
+                        <h3 class="text-xl font-semibold">Placement Cell</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm">Connecting students with leading organizations for successful career placements.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="text-gray-300 hover:text-white">About</a></li>
+                        <li><a href="process.html" class="text-gray-300 hover:text-white">Process</a></li>
+                        <li><a href="recruiters.html" class="text-gray-300 hover:text-white">Recruiters</a></li>
+                        <li><a href="statistics.html" class="text-gray-300 hover:text-white">Statistics</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li>Email: placement@university.edu</li>
+                        <li>Phone: +91 1234567890</li>
+                        <li>Address: University Campus</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2025 Placement Cell. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/dropdown.js"></script>
+    <script src="assets/js/mobile-menu.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+            if (themeToggleMobile && themeToggle) {
+                themeToggleMobile.addEventListener('click', function() {
+                    themeToggle.click();
+                });
+            }
+
+            // Mobile dropdown functionality
+            const mobileDropdownButton = document.querySelector('.mobile-dropdown-button');
+            const mobileDropdownMenu = document.querySelector('.mobile-dropdown-menu');
+            
+            if (mobileDropdownButton && mobileDropdownMenu) {
+                mobileDropdownButton.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const isVisible = mobileDropdownMenu.style.display === 'block';
+                    mobileDropdownMenu.style.display = isVisible ? 'none' : 'block';
+                });
+
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!mobileDropdownButton.contains(e.target) && !mobileDropdownMenu.contains(e.target)) {
+                        mobileDropdownMenu.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+

@@ -30,10 +30,16 @@
       });
     });
     
-    // Close menu when clicking on a link
+    // Close menu when clicking on a link (but not dropdown buttons)
     const mobileLinks = document.querySelectorAll('.mobile-menu-link');
     mobileLinks.forEach(function(link) {
-      link.addEventListener('click', function() {
+      link.addEventListener('click', function(e) {
+        // Don't close menu if clicking on dropdown button (it toggles the dropdown instead)
+        if (link.classList.contains('mobile-dropdown-button')) {
+          e.stopPropagation();
+          return;
+        }
+        // Close menu for navigation links (including dropdown menu items)
         mobileMenus.forEach(function(menu) {
           menu.classList.remove('active');
         });
