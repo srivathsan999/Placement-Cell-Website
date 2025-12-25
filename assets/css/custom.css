@@ -704,7 +704,23 @@ footer .footer-logo {
 .mobile-dropdown-menu {
   display: none;
   flex-direction: column;
-  gap: 8px;
+  gap: 0;
+  padding-left: 0 !important;
+  padding-top: 8px;
+  margin-left: 0;
+  width: 100%;
+}
+
+.mobile-dropdown-menu .mobile-menu-link {
+  padding-left: 48px !important;
+  padding-right: 16px !important;
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin: 0;
+  border-radius: 0;
 }
 
 /* Smooth Transitions */
