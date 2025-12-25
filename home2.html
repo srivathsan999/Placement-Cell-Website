@@ -53,7 +53,13 @@
                     <a href="recruiters.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">Recruiters</a>
                     <a href="statistics.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">Statistics</a>
                     <a href="contact.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">Contact</a>
-                    <a href="admin-dashboard.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">Dashboard</a>
+                    <div class="dropdown">
+                        <button class="dropdown-button text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]" aria-label="Dashboard menu" aria-expanded="false">Dashboard</button>
+                        <div class="dropdown-menu">
+                            <a href="user-dashboard.html" class="dropdown-item">User Dashboard</a>
+                            <a href="admin-dashboard.html" class="dropdown-item">Admin Dashboard</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="flex items-center space-x-4">
                     <div class="desktop-nav hidden md:flex items-center space-x-3">
@@ -89,7 +95,16 @@
             <a href="recruiters.html" class="mobile-menu-link">Recruiters</a>
             <a href="statistics.html" class="mobile-menu-link">Statistics</a>
             <a href="contact.html" class="mobile-menu-link">Contact</a>
-            <a href="admin-dashboard.html" class="mobile-menu-link">Dashboard</a>
+            <div class="mobile-dropdown">
+                <button class="mobile-dropdown-button mobile-menu-link" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                    <span>Dashboard</span>
+                    <span style="font-size: 12px;">▼</span>
+                </button>
+                <div class="mobile-dropdown-menu" style="display: none; padding-left: 16px; padding-top: 8px;">
+                    <a href="user-dashboard.html" class="mobile-menu-link" style="padding-left: 32px;">User Dashboard</a>
+                    <a href="admin-dashboard.html" class="mobile-menu-link" style="padding-left: 32px;">Admin Dashboard</a>
+                </div>
+            </div>
             <div class="mobile-menu-actions">
                 <button id="theme-toggle-mobile" class="w-full px-4 py-2 text-sm font-medium text-[#0F172A] dark:text-[#E5E7EB] bg-gray-100 dark:bg-gray-800 rounded-lg">🌙 Dark Mode</button>
                 <a href="student-login.html" class="block w-full text-center px-4 py-2 text-sm font-medium text-white bg-[#1E3A8A] dark:bg-[#3B82F6] rounded-lg">Student Login</a>
@@ -425,23 +440,29 @@
             }
 
             // Mobile dropdown functionality
-            const mobileDropdownButton = document.querySelector('.mobile-dropdown-button');
-            const mobileDropdownMenu = document.querySelector('.mobile-dropdown-menu');
+            const mobileDropdownButtons = document.querySelectorAll('.mobile-dropdown-button');
+            const mobileDropdownMenus = document.querySelectorAll('.mobile-dropdown-menu');
             
-            if (mobileDropdownButton && mobileDropdownMenu) {
-                mobileDropdownButton.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    const isVisible = mobileDropdownMenu.style.display === 'block';
-                    mobileDropdownMenu.style.display = isVisible ? 'none' : 'block';
-                });
+            mobileDropdownButtons.forEach(function(button, index) {
+                const menu = mobileDropdownMenus[index];
+                if (button && menu) {
+                    button.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        const isVisible = menu.style.display === 'block';
+                        menu.style.display = isVisible ? 'none' : 'block';
+                    });
+                }
+            });
 
-                // Close dropdown when clicking outside
-                document.addEventListener('click', function(e) {
-                    if (!mobileDropdownButton.contains(e.target) && !mobileDropdownMenu.contains(e.target)) {
-                        mobileDropdownMenu.style.display = 'none';
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                mobileDropdownButtons.forEach(function(button, index) {
+                    const menu = mobileDropdownMenus[index];
+                    if (menu && !button.contains(e.target) && !menu.contains(e.target)) {
+                        menu.style.display = 'none';
                     }
                 });
-            }
+            });
         });
     </script>
 </body>

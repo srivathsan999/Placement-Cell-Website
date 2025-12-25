@@ -53,7 +53,13 @@
                     <a href="recruiters.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">Recruiters</a>
                     <a href="statistics.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">Statistics</a>
                     <a href="contact.html" class="text-[#0F172A] dark:text-[#E5E7EB] font-medium hover:text-[#1E3A8A] dark:hover:text-[#3B82F6]">Contact</a>
-                    <a href="admin-dashboard.html" class="text-[#1E3A8A] dark:text-[#3B82F6] font-medium">Dashboard</a>
+                    <div class="dropdown">
+                        <button class="dropdown-button text-[#1E3A8A] dark:text-[#3B82F6] font-medium" aria-label="Dashboard menu" aria-expanded="false">Dashboard</button>
+                        <div class="dropdown-menu">
+                            <a href="user-dashboard.html" class="dropdown-item">User Dashboard</a>
+                            <a href="admin-dashboard.html" class="dropdown-item active">Admin Dashboard</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="flex items-center space-x-4">
                     <div class="desktop-nav hidden md:flex items-center space-x-3">
@@ -89,7 +95,16 @@
             <a href="recruiters.html" class="mobile-menu-link">Recruiters</a>
             <a href="statistics.html" class="mobile-menu-link">Statistics</a>
             <a href="contact.html" class="mobile-menu-link">Contact</a>
-            <a href="admin-dashboard.html" class="mobile-menu-link" style="color: #1E3A8A; font-weight: 600;">Dashboard</a>
+            <div class="mobile-dropdown">
+                <button class="mobile-dropdown-button mobile-menu-link" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                    <span style="color: #1E3A8A; font-weight: 600;">Dashboard</span>
+                    <span style="font-size: 12px;">▼</span>
+                </button>
+                <div class="mobile-dropdown-menu" style="display: none; padding-left: 16px; padding-top: 8px;">
+                    <a href="user-dashboard.html" class="mobile-menu-link" style="padding-left: 32px;">User Dashboard</a>
+                    <a href="admin-dashboard.html" class="mobile-menu-link" style="padding-left: 32px; color: #1E3A8A; font-weight: 600;">Admin Dashboard</a>
+                </div>
+            </div>
             <div class="mobile-menu-actions">
                 <button id="theme-toggle-mobile" class="w-full px-4 py-2 text-sm font-medium text-[#0F172A] dark:text-[#E5E7EB] bg-gray-100 dark:bg-gray-800 rounded-lg">🌙 Dark Mode</button>
                 <a href="student-login.html" class="block w-full text-center px-4 py-2 text-sm font-medium text-white bg-[#1E3A8A] dark:bg-[#3B82F6] rounded-lg">Student Login</a>
@@ -173,46 +188,46 @@
                 <div class="lg:col-span-1">
                     <h2 class="text-2xl font-semibold mb-6 text-[#0F172A] dark:text-[#E5E7EB]">Quick Actions</h2>
                     <div class="space-y-3">
-                        <a href="#" class="neu-card p-4 flex items-center space-x-3 hover:transform hover:translate-y-[-2px] transition-all">
+                        <button onclick="openModal('addStudentModal')" class="neu-card p-4 flex items-center space-x-3 hover:transform hover:translate-y-[-2px] transition-all w-full text-left">
                             <div class="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
                                 <svg class="w-5 h-5 text-[#1E3A8A] dark:text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
                                 </svg>
                             </div>
                             <span class="text-[#0F172A] dark:text-[#E5E7EB] font-medium">Add New Student</span>
-                        </a>
-                        <a href="#" class="neu-card p-4 flex items-center space-x-3 hover:transform hover:translate-y-[-2px] transition-all">
+                        </button>
+                        <button onclick="openModal('addRecruiterModal')" class="neu-card p-4 flex items-center space-x-3 hover:transform hover:translate-y-[-2px] transition-all w-full text-left">
                             <div class="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
                                 <svg class="w-5 h-5 text-[#16A34A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
                                 </svg>
                             </div>
                             <span class="text-[#0F172A] dark:text-[#E5E7EB] font-medium">Add New Recruiter</span>
-                        </a>
-                        <a href="#" class="neu-card p-4 flex items-center space-x-3 hover:transform hover:translate-y-[-2px] transition-all">
+                        </button>
+                        <button onclick="openModal('scheduleDriveModal')" class="neu-card p-4 flex items-center space-x-3 hover:transform hover:translate-y-[-2px] transition-all w-full text-left">
                             <div class="p-2 bg-purple-100 dark:bg-purple-900/30 rounded-lg">
                                 <svg class="w-5 h-5 text-[#9333EA]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                                 </svg>
                             </div>
                             <span class="text-[#0F172A] dark:text-[#E5E7EB] font-medium">Schedule Drive</span>
-                        </a>
-                        <a href="#" class="neu-card p-4 flex items-center space-x-3 hover:transform hover:translate-y-[-2px] transition-all">
+                        </button>
+                        <button onclick="openModal('postNoticeModal')" class="neu-card p-4 flex items-center space-x-3 hover:transform hover:translate-y-[-2px] transition-all w-full text-left">
                             <div class="p-2 bg-orange-100 dark:bg-orange-900/30 rounded-lg">
                                 <svg class="w-5 h-5 text-[#EA580C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
                                 </svg>
                             </div>
                             <span class="text-[#0F172A] dark:text-[#E5E7EB] font-medium">Post Notice</span>
-                        </a>
-                        <a href="#" class="neu-card p-4 flex items-center space-x-3 hover:transform hover:translate-y-[-2px] transition-all">
+                        </button>
+                        <button onclick="openModal('reportsModal')" class="neu-card p-4 flex items-center space-x-3 hover:transform hover:translate-y-[-2px] transition-all w-full text-left">
                             <div class="p-2 bg-cyan-100 dark:bg-cyan-900/30 rounded-lg">
                                 <svg class="w-5 h-5 text-[#0EA5E9]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
                                 </svg>
                             </div>
                             <span class="text-[#0F172A] dark:text-[#E5E7EB] font-medium">View Reports</span>
-                        </a>
+                        </button>
                     </div>
                 </div>
 
@@ -313,7 +328,7 @@
                             <span class="font-semibold text-[#EA580C]">665</span>
                         </div>
                     </div>
-                    <a href="#" class="block text-center neu-button px-4 py-2 text-sm font-semibold text-[#1E3A8A] dark:text-[#3B82F6] mt-auto">Manage Students</a>
+                    <button onclick="openModal('manageStudentsModal')" class="block w-full text-center neu-button px-4 py-2 text-sm font-semibold text-[#1E3A8A] dark:text-[#3B82F6] mt-auto">Manage Students</button>
                 </div>
 
                 <!-- Recruiters Management -->
@@ -341,7 +356,7 @@
                             <span class="font-semibold text-[#16A34A]">+5</span>
                         </div>
                     </div>
-                    <a href="#" class="block text-center neu-button px-4 py-2 text-sm font-semibold text-[#1E3A8A] dark:text-[#3B82F6] mt-auto">Manage Recruiters</a>
+                    <button onclick="openModal('manageRecruitersModal')" class="block w-full text-center neu-button px-4 py-2 text-sm font-semibold text-[#1E3A8A] dark:text-[#3B82F6] mt-auto">Manage Recruiters</button>
                 </div>
 
                 <!-- Placement Drives -->
@@ -369,7 +384,7 @@
                             <span class="font-semibold text-[#64748B] dark:text-[#94A3B8]">156</span>
                         </div>
                     </div>
-                    <a href="#" class="block text-center neu-button px-4 py-2 text-sm font-semibold text-[#1E3A8A] dark:text-[#3B82F6] mt-auto">Manage Drives</a>
+                    <button onclick="openModal('manageDrivesModal')" class="block w-full text-center neu-button px-4 py-2 text-sm font-semibold text-[#1E3A8A] dark:text-[#3B82F6] mt-auto">Manage Drives</button>
                 </div>
             </div>
         </div>
@@ -411,6 +426,336 @@
         </div>
     </footer>
 
+    <!-- Modals -->
+    <!-- Add Student Modal -->
+    <div id="addStudentModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Student</h2>
+                <button class="modal-close" onclick="closeModal('addStudentModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="addStudentForm" onsubmit="handleAddStudentSubmit(event)">
+                    <div class="form-group">
+                        <label for="studentName">Full Name *</label>
+                        <input type="text" id="studentName" required placeholder="Enter student name">
+                    </div>
+                    <div class="form-group">
+                        <label for="studentEmail">Email *</label>
+                        <input type="email" id="studentEmail" required placeholder="student@university.edu">
+                    </div>
+                    <div class="form-group">
+                        <label for="studentId">Student ID *</label>
+                        <input type="text" id="studentId" required placeholder="Enter student ID">
+                    </div>
+                    <div class="form-group">
+                        <label for="studentCourse">Course *</label>
+                        <select id="studentCourse" required>
+                            <option value="">Select course...</option>
+                            <option value="cse">Computer Science</option>
+                            <option value="ece">Electronics</option>
+                            <option value="mech">Mechanical</option>
+                            <option value="civil">Civil</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="studentCGPA">CGPA</label>
+                        <input type="number" id="studentCGPA" step="0.01" min="0" max="10" placeholder="8.5">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeModal('addStudentModal')">Cancel</button>
+                <button class="btn-primary" onclick="document.getElementById('addStudentForm').requestSubmit()">Add Student</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Recruiter Modal -->
+    <div id="addRecruiterModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Recruiter</h2>
+                <button class="modal-close" onclick="closeModal('addRecruiterModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="addRecruiterForm" onsubmit="handleAddRecruiterSubmit(event)">
+                    <div class="form-group">
+                        <label for="companyName">Company Name *</label>
+                        <input type="text" id="companyName" required placeholder="Enter company name">
+                    </div>
+                    <div class="form-group">
+                        <label for="recruiterEmail">Contact Email *</label>
+                        <input type="email" id="recruiterEmail" required placeholder="hr@company.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="recruiterPhone">Contact Phone</label>
+                        <input type="tel" id="recruiterPhone" placeholder="+91 1234567890">
+                    </div>
+                    <div class="form-group">
+                        <label for="companyIndustry">Industry *</label>
+                        <select id="companyIndustry" required>
+                            <option value="">Select industry...</option>
+                            <option value="tech">Technology</option>
+                            <option value="finance">Finance</option>
+                            <option value="consulting">Consulting</option>
+                            <option value="manufacturing">Manufacturing</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="companyLocation">Location</label>
+                        <input type="text" id="companyLocation" placeholder="City, Country">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeModal('addRecruiterModal')">Cancel</button>
+                <button class="btn-primary" onclick="document.getElementById('addRecruiterForm').requestSubmit()">Add Recruiter</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Schedule Drive Modal -->
+    <div id="scheduleDriveModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Schedule Placement Drive</h2>
+                <button class="modal-close" onclick="closeModal('scheduleDriveModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="scheduleDriveForm" onsubmit="handleScheduleDriveSubmit(event)">
+                    <div class="form-group">
+                        <label for="driveCompany">Company *</label>
+                        <select id="driveCompany" required>
+                            <option value="">Select company...</option>
+                            <option value="techcorp">TechCorp</option>
+                            <option value="datasys">DataSys</option>
+                            <option value="financehub">FinanceHub</option>
+                            <option value="bankone">BankOne</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="driveDate">Date *</label>
+                        <input type="date" id="driveDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="driveTime">Time *</label>
+                        <input type="time" id="driveTime" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="driveLocation">Location *</label>
+                        <input type="text" id="driveLocation" required placeholder="Room 201, Placement Cell">
+                    </div>
+                    <div class="form-group">
+                        <label for="drivePositions">Open Positions</label>
+                        <textarea id="drivePositions" placeholder="List available positions..."></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeModal('scheduleDriveModal')">Cancel</button>
+                <button class="btn-primary" onclick="document.getElementById('scheduleDriveForm').requestSubmit()">Schedule Drive</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Post Notice Modal -->
+    <div id="postNoticeModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Post Notice</h2>
+                <button class="modal-close" onclick="closeModal('postNoticeModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="postNoticeForm" onsubmit="handlePostNoticeSubmit(event)">
+                    <div class="form-group">
+                        <label for="noticeTitle">Title *</label>
+                        <input type="text" id="noticeTitle" required placeholder="Enter notice title">
+                    </div>
+                    <div class="form-group">
+                        <label for="noticeContent">Content *</label>
+                        <textarea id="noticeContent" required rows="6" placeholder="Enter notice content..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="noticePriority">Priority</label>
+                        <select id="noticePriority">
+                            <option value="normal">Normal</option>
+                            <option value="high">High</option>
+                            <option value="urgent">Urgent</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeModal('postNoticeModal')">Cancel</button>
+                <button class="btn-primary" onclick="document.getElementById('postNoticeForm').requestSubmit()">Post Notice</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- View Reports Modal -->
+    <div id="reportsModal" class="modal">
+        <div class="modal-content" style="max-width: 800px;">
+            <div class="modal-header">
+                <h2>Placement Reports</h2>
+                <button class="modal-close" onclick="closeModal('reportsModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="space-y-4">
+                    <div class="neu-card p-4">
+                        <h3 class="font-semibold mb-2 text-[#0F172A] dark:text-[#E5E7EB]">Monthly Placement Report</h3>
+                        <p class="text-sm text-[#64748B] dark:text-[#94A3B8] mb-3">March 2025</p>
+                        <div class="flex justify-between text-sm">
+                            <span>Total Placements:</span>
+                            <span class="font-semibold">45</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span>Average Package:</span>
+                            <span class="font-semibold">₹13.5L</span>
+                        </div>
+                        <button class="btn-primary mt-3 w-full text-sm">Download PDF</button>
+                    </div>
+                    <div class="neu-card p-4">
+                        <h3 class="font-semibold mb-2 text-[#0F172A] dark:text-[#E5E7EB]">Student Statistics</h3>
+                        <p class="text-sm text-[#64748B] dark:text-[#94A3B8] mb-3">Overall Statistics</p>
+                        <div class="flex justify-between text-sm">
+                            <span>Registered Students:</span>
+                            <span class="font-semibold">1,245</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span>Placed Students:</span>
+                            <span class="font-semibold text-[#16A34A]">580</span>
+                        </div>
+                        <button class="btn-primary mt-3 w-full text-sm">Download CSV</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeModal('reportsModal')">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Manage Students Modal -->
+    <div id="manageStudentsModal" class="modal">
+        <div class="modal-content" style="max-width: 900px;">
+            <div class="modal-header">
+                <h2>Manage Students</h2>
+                <button class="modal-close" onclick="closeModal('manageStudentsModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-4">
+                    <input type="text" placeholder="Search students..." class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-[#334155]">
+                </div>
+                <div class="space-y-2 max-h-96 overflow-y-auto">
+                    <div class="neu-card p-4 flex justify-between items-center">
+                        <div>
+                            <div class="font-semibold text-[#0F172A] dark:text-[#E5E7EB]">John Doe</div>
+                            <div class="text-sm text-[#64748B] dark:text-[#94A3B8]">CSE - ID: STU001</div>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="btn-primary text-sm px-3 py-1">View</button>
+                            <button class="btn-secondary text-sm px-3 py-1">Edit</button>
+                        </div>
+                    </div>
+                    <div class="neu-card p-4 flex justify-between items-center">
+                        <div>
+                            <div class="font-semibold text-[#0F172A] dark:text-[#E5E7EB]">Jane Smith</div>
+                            <div class="text-sm text-[#64748B] dark:text-[#94A3B8]">ECE - ID: STU002</div>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="btn-primary text-sm px-3 py-1">View</button>
+                            <button class="btn-secondary text-sm px-3 py-1">Edit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeModal('manageStudentsModal')">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Manage Recruiters Modal -->
+    <div id="manageRecruitersModal" class="modal">
+        <div class="modal-content" style="max-width: 900px;">
+            <div class="modal-header">
+                <h2>Manage Recruiters</h2>
+                <button class="modal-close" onclick="closeModal('manageRecruitersModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-4">
+                    <input type="text" placeholder="Search recruiters..." class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-[#334155]">
+                </div>
+                <div class="space-y-2 max-h-96 overflow-y-auto">
+                    <div class="neu-card p-4 flex justify-between items-center">
+                        <div>
+                            <div class="font-semibold text-[#0F172A] dark:text-[#E5E7EB]">TechCorp</div>
+                            <div class="text-sm text-[#64748B] dark:text-[#94A3B8]">Technology - Active</div>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="btn-primary text-sm px-3 py-1">View</button>
+                            <button class="btn-secondary text-sm px-3 py-1">Edit</button>
+                        </div>
+                    </div>
+                    <div class="neu-card p-4 flex justify-between items-center">
+                        <div>
+                            <div class="font-semibold text-[#0F172A] dark:text-[#E5E7EB]">DataSys</div>
+                            <div class="text-sm text-[#64748B] dark:text-[#94A3B8]">Technology - Active</div>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="btn-primary text-sm px-3 py-1">View</button>
+                            <button class="btn-secondary text-sm px-3 py-1">Edit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeModal('manageRecruitersModal')">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Manage Drives Modal -->
+    <div id="manageDrivesModal" class="modal">
+        <div class="modal-content" style="max-width: 900px;">
+            <div class="modal-header">
+                <h2>Manage Placement Drives</h2>
+                <button class="modal-close" onclick="closeModal('manageDrivesModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-4">
+                    <input type="text" placeholder="Search drives..." class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-[#334155]">
+                </div>
+                <div class="space-y-2 max-h-96 overflow-y-auto">
+                    <div class="neu-card p-4 flex justify-between items-center">
+                        <div>
+                            <div class="font-semibold text-[#0F172A] dark:text-[#E5E7EB]">TechCorp Drive</div>
+                            <div class="text-sm text-[#64748B] dark:text-[#94A3B8]">March 15, 2025 - Room 201</div>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="btn-primary text-sm px-3 py-1">View</button>
+                            <button class="btn-secondary text-sm px-3 py-1">Edit</button>
+                        </div>
+                    </div>
+                    <div class="neu-card p-4 flex justify-between items-center">
+                        <div>
+                            <div class="font-semibold text-[#0F172A] dark:text-[#E5E7EB]">DataSys Drive</div>
+                            <div class="text-sm text-[#64748B] dark:text-[#94A3B8]">March 20, 2025 - Online</div>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="btn-primary text-sm px-3 py-1">View</button>
+                            <button class="btn-secondary text-sm px-3 py-1">Edit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeModal('manageDrivesModal')">Close</button>
+            </div>
+        </div>
+    </div>
+
     <script src="assets/js/theme.js"></script>
     <script src="assets/js/dropdown.js"></script>
     <script src="assets/js/mobile-menu.js"></script>
@@ -428,24 +773,122 @@
             }
 
             // Mobile dropdown functionality
-            const mobileDropdownButton = document.querySelector('.mobile-dropdown-button');
-            const mobileDropdownMenu = document.querySelector('.mobile-dropdown-menu');
+            const mobileDropdownButtons = document.querySelectorAll('.mobile-dropdown-button');
+            const mobileDropdownMenus = document.querySelectorAll('.mobile-dropdown-menu');
             
-            if (mobileDropdownButton && mobileDropdownMenu) {
-                mobileDropdownButton.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    const isVisible = mobileDropdownMenu.style.display === 'block';
-                    mobileDropdownMenu.style.display = isVisible ? 'none' : 'block';
-                });
+            mobileDropdownButtons.forEach(function(button, index) {
+                const menu = mobileDropdownMenus[index];
+                if (button && menu) {
+                    button.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        const isVisible = menu.style.display === 'block';
+                        menu.style.display = isVisible ? 'none' : 'block';
+                    });
+                }
+            });
 
-                // Close dropdown when clicking outside
-                document.addEventListener('click', function(e) {
-                    if (!mobileDropdownButton.contains(e.target) && !mobileDropdownMenu.contains(e.target)) {
-                        mobileDropdownMenu.style.display = 'none';
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                mobileDropdownButtons.forEach(function(button, index) {
+                    const menu = mobileDropdownMenus[index];
+                    if (menu && !button.contains(e.target) && !menu.contains(e.target)) {
+                        menu.style.display = 'none';
                     }
                 });
-            }
+            });
         });
+
+        // Modal Functions
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(function(modal) {
+                if (event.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
+
+        // Form Submission Handlers
+        function handleAddStudentSubmit(event) {
+            event.preventDefault();
+            const studentName = document.getElementById('studentName').value;
+            
+            setTimeout(function() {
+                alert('Student "' + studentName + '" added successfully!');
+                closeModal('addStudentModal');
+                document.getElementById('addStudentForm').reset();
+                // Update student count
+                const studentCount = document.querySelectorAll('.stat-value')[0];
+                if (studentCount) {
+                    const currentCount = parseInt(studentCount.textContent.replace(',', ''));
+                    studentCount.textContent = (currentCount + 1).toLocaleString();
+                }
+            }, 500);
+        }
+
+        function handleAddRecruiterSubmit(event) {
+            event.preventDefault();
+            const companyName = document.getElementById('companyName').value;
+            
+            setTimeout(function() {
+                alert('Recruiter "' + companyName + '" added successfully!');
+                closeModal('addRecruiterModal');
+                document.getElementById('addRecruiterForm').reset();
+                // Update recruiter count
+                const recruiterCount = document.querySelectorAll('.stat-value')[2];
+                if (recruiterCount) {
+                    const currentCount = parseInt(recruiterCount.textContent);
+                    recruiterCount.textContent = currentCount + 1;
+                }
+            }, 500);
+        }
+
+        function handleScheduleDriveSubmit(event) {
+            event.preventDefault();
+            const company = document.getElementById('driveCompany').value;
+            const date = document.getElementById('driveDate').value;
+            
+            setTimeout(function() {
+                alert('Placement drive scheduled successfully for ' + company + ' on ' + date + '!');
+                closeModal('scheduleDriveModal');
+                document.getElementById('scheduleDriveForm').reset();
+                // Update drive count
+                const driveCount = document.querySelectorAll('.stat-value')[3];
+                if (driveCount) {
+                    const currentCount = parseInt(driveCount.textContent);
+                    driveCount.textContent = currentCount + 1;
+                }
+            }, 500);
+        }
+
+        function handlePostNoticeSubmit(event) {
+            event.preventDefault();
+            const noticeTitle = document.getElementById('noticeTitle').value;
+            
+            setTimeout(function() {
+                alert('Notice "' + noticeTitle + '" posted successfully!');
+                closeModal('postNoticeModal');
+                document.getElementById('postNoticeForm').reset();
+            }, 500);
+        }
     </script>
 </body>
 </html>
