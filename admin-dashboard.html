@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - Placement Cell</title>
     <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -19,17 +22,30 @@
             background-color: #F8FAFC;
             color: #0F172A;
         }
+
         .dark body {
             background-color: #020617;
             color: #E5E7EB;
         }
-        h1, h2, h3 {
+
+        h1,
+        h2,
+        h3 {
             font-family: 'Poppins', sans-serif;
         }
-        h1 { font-weight: 700; }
-        h2 { font-weight: 600; }
-        h3 { font-weight: 600; }
-        
+
+        h1 {
+            font-weight: 700;
+        }
+
+        h2 {
+            font-weight: 600;
+        }
+
+        h3 {
+            font-weight: 600;
+        }
+
         /* Side Navigation Styles */
         .side-nav {
             position: fixed;
@@ -45,12 +61,12 @@
             display: flex;
             flex-direction: column;
         }
-        
+
         .dark .side-nav {
             background: #1e293b;
             border-right-color: rgba(255, 255, 255, 0.1);
         }
-        
+
         .side-nav-item {
             display: flex;
             align-items: center;
@@ -60,43 +76,43 @@
             transition: all 0.2s ease;
             border-left: 3px solid transparent;
         }
-        
+
         .dark .side-nav-item {
             color: #94A3B8;
         }
-        
+
         .side-nav-item:hover {
             background: rgba(30, 58, 138, 0.05);
             color: #1E3A8A;
             border-left-color: #1E3A8A;
         }
-        
+
         .dark .side-nav-item:hover {
             background: rgba(59, 130, 246, 0.1);
             color: #3B82F6;
             border-left-color: #3B82F6;
         }
-        
+
         .side-nav-item.active {
             background: rgba(30, 58, 138, 0.1);
             color: #1E3A8A;
             border-left-color: #1E3A8A;
             font-weight: 600;
         }
-        
+
         .dark .side-nav-item.active {
             background: rgba(59, 130, 246, 0.15);
             color: #3B82F6;
             border-left-color: #3B82F6;
         }
-        
+
         .side-nav-item svg {
             width: 20px;
             height: 20px;
             margin-right: 12px;
             flex-shrink: 0;
         }
-        
+
         .side-nav-section {
             padding: 16px 20px 8px;
             font-size: 11px;
@@ -105,16 +121,16 @@
             letter-spacing: 0.5px;
             color: #94A3B8;
         }
-        
+
         .dark .side-nav-section {
             color: #64748B;
         }
-        
+
         .main-content {
             margin-left: 260px;
             transition: margin-left 0.3s ease;
         }
-        
+
         .nav-toggle {
             display: none;
             background: none;
@@ -123,17 +139,18 @@
             padding: 8px;
             margin-left: 12px;
         }
-        
+
         .side-nav-logout {
             margin-top: auto;
             padding-top: 16px;
+            padding-bottom: 24px;
             border-top: 1px solid rgba(0, 0, 0, 0.1);
         }
-        
+
         .dark .side-nav-logout {
             border-top-color: rgba(255, 255, 255, 0.1);
         }
-        
+
         .side-nav-logout-btn {
             display: flex;
             align-items: center;
@@ -149,28 +166,28 @@
             font-size: inherit;
             font-family: inherit;
         }
-        
+
         .dark .side-nav-logout-btn {
             color: #F87171;
         }
-        
+
         .side-nav-logout-btn:hover {
             background: rgba(220, 38, 38, 0.1);
             border-left-color: #DC2626;
         }
-        
+
         .dark .side-nav-logout-btn:hover {
             background: rgba(248, 113, 113, 0.15);
             border-left-color: #F87171;
         }
-        
+
         .side-nav-logout-btn svg {
             width: 20px;
             height: 20px;
             margin-right: 12px;
             flex-shrink: 0;
         }
-        
+
         @media (max-width: 1024px) {
             .side-nav {
                 left: auto;
@@ -179,25 +196,26 @@
                 border-left: 1px solid rgba(0, 0, 0, 0.1);
                 transform: translateX(100%);
             }
-            
+
             .dark .side-nav {
                 border-left-color: rgba(255, 255, 255, 0.1);
             }
-            
+
             .side-nav.open {
                 transform: translateX(0);
             }
-            
+
             .main-content {
                 margin-left: 0;
             }
-            
+
             .nav-toggle {
                 display: block;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Dashboard Header -->
     <header class="glass sticky top-0 z-50 border-b border-gray-200 dark:border-gray-800">
@@ -208,8 +226,10 @@
                     <span class="text-xl font-semibold text-[#1E3A8A] dark:text-[#3B82F6]">Placement Cell</span>
                 </div>
                 <button class="nav-toggle" onclick="toggleSideNav()">
-                    <svg class="w-6 h-6 text-[#0F172A] dark:text-[#E5E7EB]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    <svg class="w-6 h-6 text-[#0F172A] dark:text-[#E5E7EB]" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
             </div>
@@ -222,85 +242,110 @@
             <div class="side-nav-section">Main</div>
             <a href="#" class="side-nav-item active">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                    </path>
                 </svg>
                 Dashboard
             </a>
-            
+
             <div class="side-nav-section">Management</div>
             <a href="#" class="side-nav-item">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
+                    </path>
                 </svg>
                 Students
             </a>
             <a href="#" class="side-nav-item">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                    </path>
                 </svg>
                 Recruiters
             </a>
             <a href="#" class="side-nav-item">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                    </path>
                 </svg>
                 Placement Drives
             </a>
             <a href="#" class="side-nav-item">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                    </path>
                 </svg>
                 Applications
             </a>
-            
+
             <div class="side-nav-section">Analytics</div>
             <a href="#" class="side-nav-item">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                    </path>
                 </svg>
                 Reports
             </a>
             <a href="#" class="side-nav-item">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                    </path>
                 </svg>
                 Statistics
             </a>
-            
+
             <div class="side-nav-section">Communication</div>
             <a href="#" class="side-nav-item">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z">
+                    </path>
                 </svg>
                 Notices
             </a>
             <a href="#" class="side-nav-item">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
+                    </path>
                 </svg>
                 Announcements
             </a>
-            
+
             <div class="side-nav-section">System</div>
             <a href="#" class="side-nav-item">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
+                    </path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                 </svg>
                 Settings
             </a>
             <a href="#" class="side-nav-item">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
+                    </path>
                 </svg>
                 Help & Support
             </a>
         </div>
-        
+
         <div class="side-nav-logout">
             <button onclick="handleLogout()" class="side-nav-logout-btn">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
+                    </path>
                 </svg>
                 Logout
             </button>
@@ -313,7 +358,8 @@
         <section class="py-8 px-4 bg-[#F8FAFC] dark:bg-[#020617] border-b border-gray-200 dark:border-gray-800">
             <div class="container mx-auto max-w-7xl">
                 <div class="text-center">
-                    <h1 class="text-3xl md:text-4xl font-bold mb-2 text-[#0F172A] dark:text-[#E5E7EB]">Admin Dashboard</h1>
+                    <h1 class="text-3xl md:text-4xl font-bold mb-2 text-[#0F172A] dark:text-[#E5E7EB]">Admin Dashboard
+                    </h1>
                     <p class="text-[#64748B] dark:text-[#94A3B8]">Manage placements, students, and recruiters</p>
                 </div>
             </div>
@@ -322,600 +368,677 @@
         <!-- Overview Statistics -->
         <section class="py-8 px-4 bg-white dark:bg-[#1e293b]">
             <div class="container mx-auto max-w-7xl">
-            <h2 class="text-2xl font-semibold mb-6 text-[#0F172A] dark:text-[#E5E7EB]">Overview</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="stat-card">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
-                            <svg class="w-6 h-6 text-[#1E3A8A] dark:text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                            </svg>
+                <h2 class="text-2xl font-semibold mb-6 text-[#0F172A] dark:text-[#E5E7EB]">Overview</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="stat-card">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
+                                <svg class="w-6 h-6 text-[#1E3A8A] dark:text-[#3B82F6]" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
+                                    </path>
+                                </svg>
+                            </div>
                         </div>
+                        <div class="stat-value text-[#1E3A8A] dark:text-[#3B82F6]">1,245</div>
+                        <div class="stat-label">Total Students</div>
+                        <div class="text-xs text-[#16A34A] mt-2">+12% from last month</div>
                     </div>
-                    <div class="stat-value text-[#1E3A8A] dark:text-[#3B82F6]">1,245</div>
-                    <div class="stat-label">Total Students</div>
-                    <div class="text-xs text-[#16A34A] mt-2">+12% from last month</div>
-                </div>
-                <div class="stat-card">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="p-3 bg-green-100 dark:bg-green-900/30 rounded-lg">
-                            <svg class="w-6 h-6 text-[#16A34A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
+                    <div class="stat-card">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="p-3 bg-green-100 dark:bg-green-900/30 rounded-lg">
+                                <svg class="w-6 h-6 text-[#16A34A]" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
                         </div>
+                        <div class="stat-value success">580</div>
+                        <div class="stat-label">Placed Students</div>
+                        <div class="text-xs text-[#16A34A] mt-2">92% placement rate</div>
                     </div>
-                    <div class="stat-value success">580</div>
-                    <div class="stat-label">Placed Students</div>
-                    <div class="text-xs text-[#16A34A] mt-2">92% placement rate</div>
-                </div>
-                <div class="stat-card">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-lg">
-                            <svg class="w-6 h-6 text-[#9333EA]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                            </svg>
+                    <div class="stat-card">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-lg">
+                                <svg class="w-6 h-6 text-[#9333EA]" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                                    </path>
+                                </svg>
+                            </div>
                         </div>
+                        <div class="stat-value text-[#1E3A8A] dark:text-[#3B82F6]">120</div>
+                        <div class="stat-label">Active Recruiters</div>
+                        <div class="text-xs text-[#16A34A] mt-2">+5 new this month</div>
                     </div>
-                    <div class="stat-value text-[#1E3A8A] dark:text-[#3B82F6]">120</div>
-                    <div class="stat-label">Active Recruiters</div>
-                    <div class="text-xs text-[#16A34A] mt-2">+5 new this month</div>
-                </div>
-                <div class="stat-card">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="p-3 bg-orange-100 dark:bg-orange-900/30 rounded-lg">
-                            <svg class="w-6 h-6 text-[#EA580C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                            </svg>
+                    <div class="stat-card">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="p-3 bg-orange-100 dark:bg-orange-900/30 rounded-lg">
+                                <svg class="w-6 h-6 text-[#EA580C]" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                            </div>
                         </div>
+                        <div class="stat-value accent">24</div>
+                        <div class="stat-label">Upcoming Drives</div>
+                        <div class="text-xs text-[#64748B] dark:text-[#94A3B8] mt-2">Next: March 15, 2025</div>
                     </div>
-                    <div class="stat-value accent">24</div>
-                    <div class="stat-label">Upcoming Drives</div>
-                    <div class="text-xs text-[#64748B] dark:text-[#94A3B8] mt-2">Next: March 15, 2025</div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Quick Actions & Recent Activity -->
-    <section class="py-8 px-4 bg-[#F8FAFC] dark:bg-[#020617]">
-        <div class="container mx-auto max-w-7xl">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <!-- Quick Actions -->
-                <div class="lg:col-span-1">
-                    <h2 class="text-2xl font-semibold mb-6 text-[#0F172A] dark:text-[#E5E7EB]">Quick Actions</h2>
-                    <div class="space-y-3">
-                        <button onclick="openModal('addStudentModal')" class="neu-card p-4 flex items-center space-x-3 hover:transform hover:translate-y-[-2px] transition-all w-full text-left">
-                            <div class="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
-                                <svg class="w-5 h-5 text-[#1E3A8A] dark:text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-                                </svg>
-                            </div>
-                            <span class="text-[#0F172A] dark:text-[#E5E7EB] font-medium">Add New Student</span>
-                        </button>
-                        <button onclick="openModal('addRecruiterModal')" class="neu-card p-4 flex items-center space-x-3 hover:transform hover:translate-y-[-2px] transition-all w-full text-left">
-                            <div class="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
-                                <svg class="w-5 h-5 text-[#16A34A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-                                </svg>
-                            </div>
-                            <span class="text-[#0F172A] dark:text-[#E5E7EB] font-medium">Add New Recruiter</span>
-                        </button>
-                        <button onclick="openModal('scheduleDriveModal')" class="neu-card p-4 flex items-center space-x-3 hover:transform hover:translate-y-[-2px] transition-all w-full text-left">
-                            <div class="p-2 bg-purple-100 dark:bg-purple-900/30 rounded-lg">
-                                <svg class="w-5 h-5 text-[#9333EA]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                            </div>
-                            <span class="text-[#0F172A] dark:text-[#E5E7EB] font-medium">Schedule Drive</span>
-                        </button>
-                        <button onclick="openModal('postNoticeModal')" class="neu-card p-4 flex items-center space-x-3 hover:transform hover:translate-y-[-2px] transition-all w-full text-left">
-                            <div class="p-2 bg-orange-100 dark:bg-orange-900/30 rounded-lg">
-                                <svg class="w-5 h-5 text-[#EA580C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
-                                </svg>
-                            </div>
-                            <span class="text-[#0F172A] dark:text-[#E5E7EB] font-medium">Post Notice</span>
-                        </button>
-                        <button onclick="openModal('reportsModal')" class="neu-card p-4 flex items-center space-x-3 hover:transform hover:translate-y-[-2px] transition-all w-full text-left">
-                            <div class="p-2 bg-cyan-100 dark:bg-cyan-900/30 rounded-lg">
-                                <svg class="w-5 h-5 text-[#0EA5E9]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                                </svg>
-                            </div>
-                            <span class="text-[#0F172A] dark:text-[#E5E7EB] font-medium">View Reports</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Recent Activity -->
-                <div class="lg:col-span-2">
-                    <h2 class="text-2xl font-semibold mb-6 text-[#0F172A] dark:text-[#E5E7EB]">Recent Activity</h2>
-                    <div class="neu-card p-6">
-                        <div class="space-y-4">
-                            <div class="flex items-start space-x-4 pb-4 border-b border-gray-200 dark:border-gray-700">
-                                <div class="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
-                                    <svg class="w-5 h-5 text-[#16A34A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                    </svg>
-                                </div>
-                                <div class="flex-1">
-                                    <p class="text-[#0F172A] dark:text-[#E5E7EB] font-medium">15 students placed at TechCorp</p>
-                                    <p class="text-sm text-[#64748B] dark:text-[#94A3B8]">2 hours ago</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start space-x-4 pb-4 border-b border-gray-200 dark:border-gray-700">
+        <!-- Quick Actions & Recent Activity -->
+        <section class="py-8 px-4 bg-[#F8FAFC] dark:bg-[#020617]">
+            <div class="container mx-auto max-w-7xl">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- Quick Actions -->
+                    <div class="lg:col-span-1">
+                        <h2 class="text-2xl font-semibold mb-6 text-[#0F172A] dark:text-[#E5E7EB]">Quick Actions</h2>
+                        <div class="space-y-3">
+                            <button onclick="openModal('addStudentModal')"
+                                class="neu-card p-4 flex items-center space-x-3 hover:transform hover:translate-y-[-2px] transition-all w-full text-left">
                                 <div class="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
-                                    <svg class="w-5 h-5 text-[#1E3A8A] dark:text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                                    <svg class="w-5 h-5 text-[#1E3A8A] dark:text-[#3B82F6]" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 4v16m8-8H4"></path>
                                     </svg>
                                 </div>
-                                <div class="flex-1">
-                                    <p class="text-[#0F172A] dark:text-[#E5E7EB] font-medium">New recruiter registered: FinanceHub</p>
-                                    <p class="text-sm text-[#64748B] dark:text-[#94A3B8]">5 hours ago</p>
+                                <span class="text-[#0F172A] dark:text-[#E5E7EB] font-medium">Add New Student</span>
+                            </button>
+                            <button onclick="openModal('addRecruiterModal')"
+                                class="neu-card p-4 flex items-center space-x-3 hover:transform hover:translate-y-[-2px] transition-all w-full text-left">
+                                <div class="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
+                                    <svg class="w-5 h-5 text-[#16A34A]" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 4v16m8-8H4"></path>
+                                    </svg>
                                 </div>
-                            </div>
-                            <div class="flex items-start space-x-4 pb-4 border-b border-gray-200 dark:border-gray-700">
+                                <span class="text-[#0F172A] dark:text-[#E5E7EB] font-medium">Add New Recruiter</span>
+                            </button>
+                            <button onclick="openModal('scheduleDriveModal')"
+                                class="neu-card p-4 flex items-center space-x-3 hover:transform hover:translate-y-[-2px] transition-all w-full text-left">
                                 <div class="p-2 bg-purple-100 dark:bg-purple-900/30 rounded-lg">
-                                    <svg class="w-5 h-5 text-[#9333EA]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                    <svg class="w-5 h-5 text-[#9333EA]" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                        </path>
                                     </svg>
                                 </div>
-                                <div class="flex-1">
-                                    <p class="text-[#0F172A] dark:text-[#E5E7EB] font-medium">Placement drive scheduled: DataSys (March 20)</p>
-                                    <p class="text-sm text-[#64748B] dark:text-[#94A3B8]">1 day ago</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start space-x-4 pb-4 border-b border-gray-200 dark:border-gray-700">
+                                <span class="text-[#0F172A] dark:text-[#E5E7EB] font-medium">Schedule Drive</span>
+                            </button>
+                            <button onclick="openModal('postNoticeModal')"
+                                class="neu-card p-4 flex items-center space-x-3 hover:transform hover:translate-y-[-2px] transition-all w-full text-left">
                                 <div class="p-2 bg-orange-100 dark:bg-orange-900/30 rounded-lg">
-                                    <svg class="w-5 h-5 text-[#EA580C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                                    <svg class="w-5 h-5 text-[#EA580C]" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z">
+                                        </path>
                                     </svg>
                                 </div>
-                                <div class="flex-1">
-                                    <p class="text-[#0F172A] dark:text-[#E5E7EB] font-medium">Notice published: TechCorp recruitment drive</p>
-                                    <p class="text-sm text-[#64748B] dark:text-[#94A3B8]">2 days ago</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start space-x-4">
+                                <span class="text-[#0F172A] dark:text-[#E5E7EB] font-medium">Post Notice</span>
+                            </button>
+                            <button onclick="openModal('reportsModal')"
+                                class="neu-card p-4 flex items-center space-x-3 hover:transform hover:translate-y-[-2px] transition-all w-full text-left">
                                 <div class="p-2 bg-cyan-100 dark:bg-cyan-900/30 rounded-lg">
-                                    <svg class="w-5 h-5 text-[#0EA5E9]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                                    <svg class="w-5 h-5 text-[#0EA5E9]" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                                        </path>
                                     </svg>
                                 </div>
-                                <div class="flex-1">
-                                    <p class="text-[#0F172A] dark:text-[#E5E7EB] font-medium">25 new student registrations</p>
-                                    <p class="text-sm text-[#64748B] dark:text-[#94A3B8]">3 days ago</p>
+                                <span class="text-[#0F172A] dark:text-[#E5E7EB] font-medium">View Reports</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="lg:col-span-2">
+                        <h2 class="text-2xl font-semibold mb-6 text-[#0F172A] dark:text-[#E5E7EB]">Recent Activity</h2>
+                        <div class="neu-card p-6">
+                            <div class="space-y-4">
+                                <div
+                                    class="flex items-start space-x-4 pb-4 border-b border-gray-200 dark:border-gray-700">
+                                    <div class="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
+                                        <svg class="w-5 h-5 text-[#16A34A]" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1">
+                                        <p class="text-[#0F172A] dark:text-[#E5E7EB] font-medium">15 students placed at
+                                            TechCorp</p>
+                                        <p class="text-sm text-[#64748B] dark:text-[#94A3B8]">2 hours ago</p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex items-start space-x-4 pb-4 border-b border-gray-200 dark:border-gray-700">
+                                    <div class="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
+                                        <svg class="w-5 h-5 text-[#1E3A8A] dark:text-[#3B82F6]" fill="none"
+                                            stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M12 4v16m8-8H4"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1">
+                                        <p class="text-[#0F172A] dark:text-[#E5E7EB] font-medium">New recruiter
+                                            registered: FinanceHub</p>
+                                        <p class="text-sm text-[#64748B] dark:text-[#94A3B8]">5 hours ago</p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex items-start space-x-4 pb-4 border-b border-gray-200 dark:border-gray-700">
+                                    <div class="p-2 bg-purple-100 dark:bg-purple-900/30 rounded-lg">
+                                        <svg class="w-5 h-5 text-[#9333EA]" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1">
+                                        <p class="text-[#0F172A] dark:text-[#E5E7EB] font-medium">Placement drive
+                                            scheduled: DataSys (March 20)</p>
+                                        <p class="text-sm text-[#64748B] dark:text-[#94A3B8]">1 day ago</p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex items-start space-x-4 pb-4 border-b border-gray-200 dark:border-gray-700">
+                                    <div class="p-2 bg-orange-100 dark:bg-orange-900/30 rounded-lg">
+                                        <svg class="w-5 h-5 text-[#EA580C]" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1">
+                                        <p class="text-[#0F172A] dark:text-[#E5E7EB] font-medium">Notice published:
+                                            TechCorp recruitment drive</p>
+                                        <p class="text-sm text-[#64748B] dark:text-[#94A3B8]">2 days ago</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-4">
+                                    <div class="p-2 bg-cyan-100 dark:bg-cyan-900/30 rounded-lg">
+                                        <svg class="w-5 h-5 text-[#0EA5E9]" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M12 4v16m8-8H4"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1">
+                                        <p class="text-[#0F172A] dark:text-[#E5E7EB] font-medium">25 new student
+                                            registrations</p>
+                                        <p class="text-sm text-[#64748B] dark:text-[#94A3B8]">3 days ago</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Management Sections -->
-    <section class="py-8 px-4 bg-white dark:bg-[#1e293b]">
-        <div class="container mx-auto max-w-7xl">
-            <h2 class="text-2xl font-semibold mb-6 text-[#0F172A] dark:text-[#E5E7EB]">Management</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Students Management -->
-                <div class="neu-card p-6 flex flex-col h-full">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-xl font-semibold text-[#0F172A] dark:text-[#E5E7EB]">Students</h3>
-                        <div class="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
-                            <svg class="w-6 h-6 text-[#1E3A8A] dark:text-[#3B82F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                            </svg>
+        <!-- Management Sections -->
+        <section class="py-8 px-4 bg-white dark:bg-[#1e293b]">
+            <div class="container mx-auto max-w-7xl">
+                <h2 class="text-2xl font-semibold mb-6 text-[#0F172A] dark:text-[#E5E7EB]">Management</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Students Management -->
+                    <div class="neu-card p-6 flex flex-col h-full">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-semibold text-[#0F172A] dark:text-[#E5E7EB]">Students</h3>
+                            <div class="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
+                                <svg class="w-6 h-6 text-[#1E3A8A] dark:text-[#3B82F6]" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
+                                    </path>
+                                </svg>
+                            </div>
                         </div>
+                        <p class="text-[#64748B] dark:text-[#94A3B8] mb-4 text-sm flex-shrink-0">Manage student
+                            registrations, profiles, and placement status</p>
+                        <div class="space-y-2 mb-4 flex-grow">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-[#64748B] dark:text-[#94A3B8]">Total Registered</span>
+                                <span class="font-semibold text-[#0F172A] dark:text-[#E5E7EB]">1,245</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-[#64748B] dark:text-[#94A3B8]">Placed</span>
+                                <span class="font-semibold text-[#16A34A]">580</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-[#64748B] dark:text-[#94A3B8]">Pending</span>
+                                <span class="font-semibold text-[#EA580C]">665</span>
+                            </div>
+                        </div>
+                        <button onclick="openModal('manageStudentsModal')"
+                            class="block w-full text-center neu-button px-4 py-2 text-sm font-semibold text-[#1E3A8A] dark:text-[#3B82F6] mt-auto">Manage
+                            Students</button>
                     </div>
-                    <p class="text-[#64748B] dark:text-[#94A3B8] mb-4 text-sm flex-shrink-0">Manage student registrations, profiles, and placement status</p>
-                    <div class="space-y-2 mb-4 flex-grow">
-                        <div class="flex justify-between text-sm">
-                            <span class="text-[#64748B] dark:text-[#94A3B8]">Total Registered</span>
-                            <span class="font-semibold text-[#0F172A] dark:text-[#E5E7EB]">1,245</span>
-                        </div>
-                        <div class="flex justify-between text-sm">
-                            <span class="text-[#64748B] dark:text-[#94A3B8]">Placed</span>
-                            <span class="font-semibold text-[#16A34A]">580</span>
-                        </div>
-                        <div class="flex justify-between text-sm">
-                            <span class="text-[#64748B] dark:text-[#94A3B8]">Pending</span>
-                            <span class="font-semibold text-[#EA580C]">665</span>
-                        </div>
-                    </div>
-                    <button onclick="openModal('manageStudentsModal')" class="block w-full text-center neu-button px-4 py-2 text-sm font-semibold text-[#1E3A8A] dark:text-[#3B82F6] mt-auto">Manage Students</button>
-                </div>
 
-                <!-- Recruiters Management -->
-                <div class="neu-card p-6 flex flex-col h-full">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-xl font-semibold text-[#0F172A] dark:text-[#E5E7EB]">Recruiters</h3>
-                        <div class="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
-                            <svg class="w-6 h-6 text-[#16A34A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                            </svg>
+                    <!-- Recruiters Management -->
+                    <div class="neu-card p-6 flex flex-col h-full">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-semibold text-[#0F172A] dark:text-[#E5E7EB]">Recruiters</h3>
+                            <div class="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
+                                <svg class="w-6 h-6 text-[#16A34A]" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                                    </path>
+                                </svg>
+                            </div>
                         </div>
+                        <p class="text-[#64748B] dark:text-[#94A3B8] mb-4 text-sm flex-shrink-0">Manage recruiter
+                            partnerships and company profiles</p>
+                        <div class="space-y-2 mb-4 flex-grow">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-[#64748B] dark:text-[#94A3B8]">Active Partners</span>
+                                <span class="font-semibold text-[#0F172A] dark:text-[#E5E7EB]">120</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-[#64748B] dark:text-[#94A3B8]">Pending Approval</span>
+                                <span class="font-semibold text-[#EA580C]">8</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-[#64748B] dark:text-[#94A3B8]">This Month</span>
+                                <span class="font-semibold text-[#16A34A]">+5</span>
+                            </div>
+                        </div>
+                        <button onclick="openModal('manageRecruitersModal')"
+                            class="block w-full text-center neu-button px-4 py-2 text-sm font-semibold text-[#1E3A8A] dark:text-[#3B82F6] mt-auto">Manage
+                            Recruiters</button>
                     </div>
-                    <p class="text-[#64748B] dark:text-[#94A3B8] mb-4 text-sm flex-shrink-0">Manage recruiter partnerships and company profiles</p>
-                    <div class="space-y-2 mb-4 flex-grow">
-                        <div class="flex justify-between text-sm">
-                            <span class="text-[#64748B] dark:text-[#94A3B8]">Active Partners</span>
-                            <span class="font-semibold text-[#0F172A] dark:text-[#E5E7EB]">120</span>
-                        </div>
-                        <div class="flex justify-between text-sm">
-                            <span class="text-[#64748B] dark:text-[#94A3B8]">Pending Approval</span>
-                            <span class="font-semibold text-[#EA580C]">8</span>
-                        </div>
-                        <div class="flex justify-between text-sm">
-                            <span class="text-[#64748B] dark:text-[#94A3B8]">This Month</span>
-                            <span class="font-semibold text-[#16A34A]">+5</span>
-                        </div>
-                    </div>
-                    <button onclick="openModal('manageRecruitersModal')" class="block w-full text-center neu-button px-4 py-2 text-sm font-semibold text-[#1E3A8A] dark:text-[#3B82F6] mt-auto">Manage Recruiters</button>
-                </div>
 
-                <!-- Placement Drives -->
-                <div class="neu-card p-6 flex flex-col h-full">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-xl font-semibold text-[#0F172A] dark:text-[#E5E7EB]">Placement Drives</h3>
-                        <div class="p-2 bg-purple-100 dark:bg-purple-900/30 rounded-lg">
-                            <svg class="w-6 h-6 text-[#9333EA]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                            </svg>
+                    <!-- Placement Drives -->
+                    <div class="neu-card p-6 flex flex-col h-full">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-semibold text-[#0F172A] dark:text-[#E5E7EB]">Placement Drives</h3>
+                            <div class="p-2 bg-purple-100 dark:bg-purple-900/30 rounded-lg">
+                                <svg class="w-6 h-6 text-[#9333EA]" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                            </div>
                         </div>
-                    </div>
-                    <p class="text-[#64748B] dark:text-[#94A3B8] mb-4 text-sm flex-shrink-0">Schedule and manage upcoming placement drives</p>
-                    <div class="space-y-2 mb-4 flex-grow">
-                        <div class="flex justify-between text-sm">
-                            <span class="text-[#64748B] dark:text-[#94A3B8]">Upcoming</span>
-                            <span class="font-semibold text-[#0F172A] dark:text-[#E5E7EB]">24</span>
+                        <p class="text-[#64748B] dark:text-[#94A3B8] mb-4 text-sm flex-shrink-0">Schedule and manage
+                            upcoming placement drives</p>
+                        <div class="space-y-2 mb-4 flex-grow">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-[#64748B] dark:text-[#94A3B8]">Upcoming</span>
+                                <span class="font-semibold text-[#0F172A] dark:text-[#E5E7EB]">24</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-[#64748B] dark:text-[#94A3B8]">This Month</span>
+                                <span class="font-semibold text-[#16A34A]">8</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-[#64748B] dark:text-[#94A3B8]">Completed</span>
+                                <span class="font-semibold text-[#64748B] dark:text-[#94A3B8]">156</span>
+                            </div>
                         </div>
-                        <div class="flex justify-between text-sm">
-                            <span class="text-[#64748B] dark:text-[#94A3B8]">This Month</span>
-                            <span class="font-semibold text-[#16A34A]">8</span>
-                        </div>
-                        <div class="flex justify-between text-sm">
-                            <span class="text-[#64748B] dark:text-[#94A3B8]">Completed</span>
-                            <span class="font-semibold text-[#64748B] dark:text-[#94A3B8]">156</span>
-                        </div>
-                    </div>
-                    <button onclick="openModal('manageDrivesModal')" class="block w-full text-center neu-button px-4 py-2 text-sm font-semibold text-[#1E3A8A] dark:text-[#3B82F6] mt-auto">Manage Drives</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Modals -->
-    <!-- Add Student Modal -->
-    <div id="addStudentModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Add New Student</h2>
-                <button class="modal-close" onclick="closeModal('addStudentModal')">&times;</button>
-            </div>
-            <div class="modal-body">
-                <form id="addStudentForm" onsubmit="handleAddStudentSubmit(event)">
-                    <div class="form-group">
-                        <label for="studentName">Full Name *</label>
-                        <input type="text" id="studentName" required placeholder="Enter student name">
-                    </div>
-                    <div class="form-group">
-                        <label for="studentEmail">Email *</label>
-                        <input type="email" id="studentEmail" required placeholder="student@university.edu">
-                    </div>
-                    <div class="form-group">
-                        <label for="studentId">Student ID *</label>
-                        <input type="text" id="studentId" required placeholder="Enter student ID">
-                    </div>
-                    <div class="form-group">
-                        <label for="studentCourse">Course *</label>
-                        <select id="studentCourse" required>
-                            <option value="">Select course...</option>
-                            <option value="cse">Computer Science</option>
-                            <option value="ece">Electronics</option>
-                            <option value="mech">Mechanical</option>
-                            <option value="civil">Civil</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="studentCGPA">CGPA</label>
-                        <input type="number" id="studentCGPA" step="0.01" min="0" max="10" placeholder="8.5">
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button class="btn-secondary" onclick="closeModal('addStudentModal')">Cancel</button>
-                <button class="btn-primary" onclick="document.getElementById('addStudentForm').requestSubmit()">Add Student</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Add Recruiter Modal -->
-    <div id="addRecruiterModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Add New Recruiter</h2>
-                <button class="modal-close" onclick="closeModal('addRecruiterModal')">&times;</button>
-            </div>
-            <div class="modal-body">
-                <form id="addRecruiterForm" onsubmit="handleAddRecruiterSubmit(event)">
-                    <div class="form-group">
-                        <label for="companyName">Company Name *</label>
-                        <input type="text" id="companyName" required placeholder="Enter company name">
-                    </div>
-                    <div class="form-group">
-                        <label for="recruiterEmail">Contact Email *</label>
-                        <input type="email" id="recruiterEmail" required placeholder="hr@company.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="recruiterPhone">Contact Phone</label>
-                        <input type="tel" id="recruiterPhone" placeholder="+91 1234567890">
-                    </div>
-                    <div class="form-group">
-                        <label for="companyIndustry">Industry *</label>
-                        <select id="companyIndustry" required>
-                            <option value="">Select industry...</option>
-                            <option value="tech">Technology</option>
-                            <option value="finance">Finance</option>
-                            <option value="consulting">Consulting</option>
-                            <option value="manufacturing">Manufacturing</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="companyLocation">Location</label>
-                        <input type="text" id="companyLocation" placeholder="City, Country">
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button class="btn-secondary" onclick="closeModal('addRecruiterModal')">Cancel</button>
-                <button class="btn-primary" onclick="document.getElementById('addRecruiterForm').requestSubmit()">Add Recruiter</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Schedule Drive Modal -->
-    <div id="scheduleDriveModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Schedule Placement Drive</h2>
-                <button class="modal-close" onclick="closeModal('scheduleDriveModal')">&times;</button>
-            </div>
-            <div class="modal-body">
-                <form id="scheduleDriveForm" onsubmit="handleScheduleDriveSubmit(event)">
-                    <div class="form-group">
-                        <label for="driveCompany">Company *</label>
-                        <select id="driveCompany" required>
-                            <option value="">Select company...</option>
-                            <option value="techcorp">TechCorp</option>
-                            <option value="datasys">DataSys</option>
-                            <option value="financehub">FinanceHub</option>
-                            <option value="bankone">BankOne</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="driveDate">Date *</label>
-                        <input type="date" id="driveDate" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="driveTime">Time *</label>
-                        <input type="time" id="driveTime" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="driveLocation">Location *</label>
-                        <input type="text" id="driveLocation" required placeholder="Room 201, Placement Cell">
-                    </div>
-                    <div class="form-group">
-                        <label for="drivePositions">Open Positions</label>
-                        <textarea id="drivePositions" placeholder="List available positions..."></textarea>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button class="btn-secondary" onclick="closeModal('scheduleDriveModal')">Cancel</button>
-                <button class="btn-primary" onclick="document.getElementById('scheduleDriveForm').requestSubmit()">Schedule Drive</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Post Notice Modal -->
-    <div id="postNoticeModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Post Notice</h2>
-                <button class="modal-close" onclick="closeModal('postNoticeModal')">&times;</button>
-            </div>
-            <div class="modal-body">
-                <form id="postNoticeForm" onsubmit="handlePostNoticeSubmit(event)">
-                    <div class="form-group">
-                        <label for="noticeTitle">Title *</label>
-                        <input type="text" id="noticeTitle" required placeholder="Enter notice title">
-                    </div>
-                    <div class="form-group">
-                        <label for="noticeContent">Content *</label>
-                        <textarea id="noticeContent" required rows="6" placeholder="Enter notice content..."></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="noticePriority">Priority</label>
-                        <select id="noticePriority">
-                            <option value="normal">Normal</option>
-                            <option value="high">High</option>
-                            <option value="urgent">Urgent</option>
-                        </select>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button class="btn-secondary" onclick="closeModal('postNoticeModal')">Cancel</button>
-                <button class="btn-primary" onclick="document.getElementById('postNoticeForm').requestSubmit()">Post Notice</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- View Reports Modal -->
-    <div id="reportsModal" class="modal">
-        <div class="modal-content" style="max-width: 800px;">
-            <div class="modal-header">
-                <h2>Placement Reports</h2>
-                <button class="modal-close" onclick="closeModal('reportsModal')">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="space-y-4">
-                    <div class="neu-card p-4">
-                        <h3 class="font-semibold mb-2 text-[#0F172A] dark:text-[#E5E7EB]">Monthly Placement Report</h3>
-                        <p class="text-sm text-[#64748B] dark:text-[#94A3B8] mb-3">March 2025</p>
-                        <div class="flex justify-between text-sm">
-                            <span>Total Placements:</span>
-                            <span class="font-semibold">45</span>
-                        </div>
-                        <div class="flex justify-between text-sm">
-                            <span>Average Package:</span>
-                            <span class="font-semibold">₹13.5L</span>
-                        </div>
-                        <button class="btn-primary mt-3 w-full text-sm">Download PDF</button>
-                    </div>
-                    <div class="neu-card p-4">
-                        <h3 class="font-semibold mb-2 text-[#0F172A] dark:text-[#E5E7EB]">Student Statistics</h3>
-                        <p class="text-sm text-[#64748B] dark:text-[#94A3B8] mb-3">Overall Statistics</p>
-                        <div class="flex justify-between text-sm">
-                            <span>Registered Students:</span>
-                            <span class="font-semibold">1,245</span>
-                        </div>
-                        <div class="flex justify-between text-sm">
-                            <span>Placed Students:</span>
-                            <span class="font-semibold text-[#16A34A]">580</span>
-                        </div>
-                        <button class="btn-primary mt-3 w-full text-sm">Download CSV</button>
+                        <button onclick="openModal('manageDrivesModal')"
+                            class="block w-full text-center neu-button px-4 py-2 text-sm font-semibold text-[#1E3A8A] dark:text-[#3B82F6] mt-auto">Manage
+                            Drives</button>
                     </div>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button class="btn-secondary" onclick="closeModal('reportsModal')">Close</button>
-            </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- Manage Students Modal -->
-    <div id="manageStudentsModal" class="modal">
-        <div class="modal-content" style="max-width: 900px;">
-            <div class="modal-header">
-                <h2>Manage Students</h2>
-                <button class="modal-close" onclick="closeModal('manageStudentsModal')">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="mb-4">
-                    <input type="text" placeholder="Search students..." class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-[#334155]">
-                </div>
-                <div class="space-y-2 max-h-96 overflow-y-auto">
-                    <div class="neu-card p-4 flex justify-between items-center">
-                        <div>
-                            <div class="font-semibold text-[#0F172A] dark:text-[#E5E7EB]">John Doe</div>
-                            <div class="text-sm text-[#64748B] dark:text-[#94A3B8]">CSE - ID: STU001</div>
-                        </div>
-                        <div class="flex gap-2">
-                            <button class="btn-primary text-sm px-3 py-1">View</button>
-                            <button class="btn-secondary text-sm px-3 py-1">Edit</button>
-                        </div>
-                    </div>
-                    <div class="neu-card p-4 flex justify-between items-center">
-                        <div>
-                            <div class="font-semibold text-[#0F172A] dark:text-[#E5E7EB]">Jane Smith</div>
-                            <div class="text-sm text-[#64748B] dark:text-[#94A3B8]">ECE - ID: STU002</div>
-                        </div>
-                        <div class="flex gap-2">
-                            <button class="btn-primary text-sm px-3 py-1">View</button>
-                            <button class="btn-secondary text-sm px-3 py-1">Edit</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn-secondary" onclick="closeModal('manageStudentsModal')">Close</button>
-            </div>
-        </div>
-    </div>
 
-    <!-- Manage Recruiters Modal -->
-    <div id="manageRecruitersModal" class="modal">
-        <div class="modal-content" style="max-width: 900px;">
-            <div class="modal-header">
-                <h2>Manage Recruiters</h2>
-                <button class="modal-close" onclick="closeModal('manageRecruitersModal')">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="mb-4">
-                    <input type="text" placeholder="Search recruiters..." class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-[#334155]">
+        <!-- Modals -->
+        <!-- Add Student Modal -->
+        <div id="addStudentModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Add New Student</h2>
+                    <button class="modal-close" onclick="closeModal('addStudentModal')">&times;</button>
                 </div>
-                <div class="space-y-2 max-h-96 overflow-y-auto">
-                    <div class="neu-card p-4 flex justify-between items-center">
-                        <div>
-                            <div class="font-semibold text-[#0F172A] dark:text-[#E5E7EB]">TechCorp</div>
-                            <div class="text-sm text-[#64748B] dark:text-[#94A3B8]">Technology - Active</div>
+                <div class="modal-body">
+                    <form id="addStudentForm" onsubmit="handleAddStudentSubmit(event)">
+                        <div class="form-group">
+                            <label for="studentName">Full Name *</label>
+                            <input type="text" id="studentName" required placeholder="Enter student name">
                         </div>
-                        <div class="flex gap-2">
-                            <button class="btn-primary text-sm px-3 py-1">View</button>
-                            <button class="btn-secondary text-sm px-3 py-1">Edit</button>
+                        <div class="form-group">
+                            <label for="studentEmail">Email *</label>
+                            <input type="email" id="studentEmail" required placeholder="student@university.edu">
                         </div>
-                    </div>
-                    <div class="neu-card p-4 flex justify-between items-center">
-                        <div>
-                            <div class="font-semibold text-[#0F172A] dark:text-[#E5E7EB]">DataSys</div>
-                            <div class="text-sm text-[#64748B] dark:text-[#94A3B8]">Technology - Active</div>
+                        <div class="form-group">
+                            <label for="studentId">Student ID *</label>
+                            <input type="text" id="studentId" required placeholder="Enter student ID">
                         </div>
-                        <div class="flex gap-2">
-                            <button class="btn-primary text-sm px-3 py-1">View</button>
-                            <button class="btn-secondary text-sm px-3 py-1">Edit</button>
+                        <div class="form-group">
+                            <label for="studentCourse">Course *</label>
+                            <select id="studentCourse" required>
+                                <option value="">Select course...</option>
+                                <option value="cse">Computer Science</option>
+                                <option value="ece">Electronics</option>
+                                <option value="mech">Mechanical</option>
+                                <option value="civil">Civil</option>
+                            </select>
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <label for="studentCGPA">CGPA</label>
+                            <input type="number" id="studentCGPA" step="0.01" min="0" max="10" placeholder="8.5">
+                        </div>
+                    </form>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn-secondary" onclick="closeModal('manageRecruitersModal')">Close</button>
+                <div class="modal-footer">
+                    <button class="btn-secondary" onclick="closeModal('addStudentModal')">Cancel</button>
+                    <button class="btn-primary" onclick="document.getElementById('addStudentForm').requestSubmit()">Add
+                        Student</button>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Manage Drives Modal -->
-    <div id="manageDrivesModal" class="modal">
-        <div class="modal-content" style="max-width: 900px;">
-            <div class="modal-header">
-                <h2>Manage Placement Drives</h2>
-                <button class="modal-close" onclick="closeModal('manageDrivesModal')">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="mb-4">
-                    <input type="text" placeholder="Search drives..." class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-[#334155]">
+        <!-- Add Recruiter Modal -->
+        <div id="addRecruiterModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Add New Recruiter</h2>
+                    <button class="modal-close" onclick="closeModal('addRecruiterModal')">&times;</button>
                 </div>
-                <div class="space-y-2 max-h-96 overflow-y-auto">
-                    <div class="neu-card p-4 flex justify-between items-center">
-                        <div>
-                            <div class="font-semibold text-[#0F172A] dark:text-[#E5E7EB]">TechCorp Drive</div>
-                            <div class="text-sm text-[#64748B] dark:text-[#94A3B8]">March 15, 2025 - Room 201</div>
+                <div class="modal-body">
+                    <form id="addRecruiterForm" onsubmit="handleAddRecruiterSubmit(event)">
+                        <div class="form-group">
+                            <label for="companyName">Company Name *</label>
+                            <input type="text" id="companyName" required placeholder="Enter company name">
                         </div>
-                        <div class="flex gap-2">
-                            <button class="btn-primary text-sm px-3 py-1">View</button>
-                            <button class="btn-secondary text-sm px-3 py-1">Edit</button>
+                        <div class="form-group">
+                            <label for="recruiterEmail">Contact Email *</label>
+                            <input type="email" id="recruiterEmail" required placeholder="hr@company.com">
                         </div>
-                    </div>
-                    <div class="neu-card p-4 flex justify-between items-center">
-                        <div>
-                            <div class="font-semibold text-[#0F172A] dark:text-[#E5E7EB]">DataSys Drive</div>
-                            <div class="text-sm text-[#64748B] dark:text-[#94A3B8]">March 20, 2025 - Online</div>
+                        <div class="form-group">
+                            <label for="recruiterPhone">Contact Phone</label>
+                            <input type="tel" id="recruiterPhone" placeholder="+91 1234567890">
                         </div>
-                        <div class="flex gap-2">
-                            <button class="btn-primary text-sm px-3 py-1">View</button>
-                            <button class="btn-secondary text-sm px-3 py-1">Edit</button>
+                        <div class="form-group">
+                            <label for="companyIndustry">Industry *</label>
+                            <select id="companyIndustry" required>
+                                <option value="">Select industry...</option>
+                                <option value="tech">Technology</option>
+                                <option value="finance">Finance</option>
+                                <option value="consulting">Consulting</option>
+                                <option value="manufacturing">Manufacturing</option>
+                            </select>
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <label for="companyLocation">Location</label>
+                            <input type="text" id="companyLocation" placeholder="City, Country">
+                        </div>
+                    </form>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn-secondary" onclick="closeModal('manageDrivesModal')">Close</button>
+                <div class="modal-footer">
+                    <button class="btn-secondary" onclick="closeModal('addRecruiterModal')">Cancel</button>
+                    <button class="btn-primary"
+                        onclick="document.getElementById('addRecruiterForm').requestSubmit()">Add Recruiter</button>
+                </div>
             </div>
         </div>
-    </div>
+
+        <!-- Schedule Drive Modal -->
+        <div id="scheduleDriveModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Schedule Placement Drive</h2>
+                    <button class="modal-close" onclick="closeModal('scheduleDriveModal')">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="scheduleDriveForm" onsubmit="handleScheduleDriveSubmit(event)">
+                        <div class="form-group">
+                            <label for="driveCompany">Company *</label>
+                            <select id="driveCompany" required>
+                                <option value="">Select company...</option>
+                                <option value="techcorp">TechCorp</option>
+                                <option value="datasys">DataSys</option>
+                                <option value="financehub">FinanceHub</option>
+                                <option value="bankone">BankOne</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="driveDate">Date *</label>
+                            <input type="date" id="driveDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="driveTime">Time *</label>
+                            <input type="time" id="driveTime" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="driveLocation">Location *</label>
+                            <input type="text" id="driveLocation" required placeholder="Room 201, Placement Cell">
+                        </div>
+                        <div class="form-group">
+                            <label for="drivePositions">Open Positions</label>
+                            <textarea id="drivePositions" placeholder="List available positions..."></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-secondary" onclick="closeModal('scheduleDriveModal')">Cancel</button>
+                    <button class="btn-primary"
+                        onclick="document.getElementById('scheduleDriveForm').requestSubmit()">Schedule Drive</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Post Notice Modal -->
+        <div id="postNoticeModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Post Notice</h2>
+                    <button class="modal-close" onclick="closeModal('postNoticeModal')">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="postNoticeForm" onsubmit="handlePostNoticeSubmit(event)">
+                        <div class="form-group">
+                            <label for="noticeTitle">Title *</label>
+                            <input type="text" id="noticeTitle" required placeholder="Enter notice title">
+                        </div>
+                        <div class="form-group">
+                            <label for="noticeContent">Content *</label>
+                            <textarea id="noticeContent" required rows="6"
+                                placeholder="Enter notice content..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="noticePriority">Priority</label>
+                            <select id="noticePriority">
+                                <option value="normal">Normal</option>
+                                <option value="high">High</option>
+                                <option value="urgent">Urgent</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-secondary" onclick="closeModal('postNoticeModal')">Cancel</button>
+                    <button class="btn-primary" onclick="document.getElementById('postNoticeForm').requestSubmit()">Post
+                        Notice</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- View Reports Modal -->
+        <div id="reportsModal" class="modal">
+            <div class="modal-content" style="max-width: 800px;">
+                <div class="modal-header">
+                    <h2>Placement Reports</h2>
+                    <button class="modal-close" onclick="closeModal('reportsModal')">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="space-y-4">
+                        <div class="neu-card p-4">
+                            <h3 class="font-semibold mb-2 text-[#0F172A] dark:text-[#E5E7EB]">Monthly Placement Report
+                            </h3>
+                            <p class="text-sm text-[#64748B] dark:text-[#94A3B8] mb-3">March 2025</p>
+                            <div class="flex justify-between text-sm">
+                                <span>Total Placements:</span>
+                                <span class="font-semibold">45</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span>Average Package:</span>
+                                <span class="font-semibold">₹13.5L</span>
+                            </div>
+                            <button class="btn-primary mt-3 w-full text-sm">Download PDF</button>
+                        </div>
+                        <div class="neu-card p-4">
+                            <h3 class="font-semibold mb-2 text-[#0F172A] dark:text-[#E5E7EB]">Student Statistics</h3>
+                            <p class="text-sm text-[#64748B] dark:text-[#94A3B8] mb-3">Overall Statistics</p>
+                            <div class="flex justify-between text-sm">
+                                <span>Registered Students:</span>
+                                <span class="font-semibold">1,245</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span>Placed Students:</span>
+                                <span class="font-semibold text-[#16A34A]">580</span>
+                            </div>
+                            <button class="btn-primary mt-3 w-full text-sm">Download CSV</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-secondary" onclick="closeModal('reportsModal')">Close</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Manage Students Modal -->
+        <div id="manageStudentsModal" class="modal">
+            <div class="modal-content" style="max-width: 900px;">
+                <div class="modal-header">
+                    <h2>Manage Students</h2>
+                    <button class="modal-close" onclick="closeModal('manageStudentsModal')">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-4">
+                        <input type="text" placeholder="Search students..."
+                            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-[#334155]">
+                    </div>
+                    <div class="space-y-2 max-h-96 overflow-y-auto">
+                        <div class="neu-card p-4 flex justify-between items-center">
+                            <div>
+                                <div class="font-semibold text-[#0F172A] dark:text-[#E5E7EB]">John Doe</div>
+                                <div class="text-sm text-[#64748B] dark:text-[#94A3B8]">CSE - ID: STU001</div>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="btn-primary text-sm px-3 py-1">View</button>
+                                <button class="btn-secondary text-sm px-3 py-1">Edit</button>
+                            </div>
+                        </div>
+                        <div class="neu-card p-4 flex justify-between items-center">
+                            <div>
+                                <div class="font-semibold text-[#0F172A] dark:text-[#E5E7EB]">Jane Smith</div>
+                                <div class="text-sm text-[#64748B] dark:text-[#94A3B8]">ECE - ID: STU002</div>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="btn-primary text-sm px-3 py-1">View</button>
+                                <button class="btn-secondary text-sm px-3 py-1">Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-secondary" onclick="closeModal('manageStudentsModal')">Close</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Manage Recruiters Modal -->
+        <div id="manageRecruitersModal" class="modal">
+            <div class="modal-content" style="max-width: 900px;">
+                <div class="modal-header">
+                    <h2>Manage Recruiters</h2>
+                    <button class="modal-close" onclick="closeModal('manageRecruitersModal')">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-4">
+                        <input type="text" placeholder="Search recruiters..."
+                            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-[#334155]">
+                    </div>
+                    <div class="space-y-2 max-h-96 overflow-y-auto">
+                        <div class="neu-card p-4 flex justify-between items-center">
+                            <div>
+                                <div class="font-semibold text-[#0F172A] dark:text-[#E5E7EB]">TechCorp</div>
+                                <div class="text-sm text-[#64748B] dark:text-[#94A3B8]">Technology - Active</div>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="btn-primary text-sm px-3 py-1">View</button>
+                                <button class="btn-secondary text-sm px-3 py-1">Edit</button>
+                            </div>
+                        </div>
+                        <div class="neu-card p-4 flex justify-between items-center">
+                            <div>
+                                <div class="font-semibold text-[#0F172A] dark:text-[#E5E7EB]">DataSys</div>
+                                <div class="text-sm text-[#64748B] dark:text-[#94A3B8]">Technology - Active</div>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="btn-primary text-sm px-3 py-1">View</button>
+                                <button class="btn-secondary text-sm px-3 py-1">Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-secondary" onclick="closeModal('manageRecruitersModal')">Close</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Manage Drives Modal -->
+        <div id="manageDrivesModal" class="modal">
+            <div class="modal-content" style="max-width: 900px;">
+                <div class="modal-header">
+                    <h2>Manage Placement Drives</h2>
+                    <button class="modal-close" onclick="closeModal('manageDrivesModal')">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-4">
+                        <input type="text" placeholder="Search drives..."
+                            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-[#334155]">
+                    </div>
+                    <div class="space-y-2 max-h-96 overflow-y-auto">
+                        <div class="neu-card p-4 flex justify-between items-center">
+                            <div>
+                                <div class="font-semibold text-[#0F172A] dark:text-[#E5E7EB]">TechCorp Drive</div>
+                                <div class="text-sm text-[#64748B] dark:text-[#94A3B8]">March 15, 2025 - Room 201</div>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="btn-primary text-sm px-3 py-1">View</button>
+                                <button class="btn-secondary text-sm px-3 py-1">Edit</button>
+                            </div>
+                        </div>
+                        <div class="neu-card p-4 flex justify-between items-center">
+                            <div>
+                                <div class="font-semibold text-[#0F172A] dark:text-[#E5E7EB]">DataSys Drive</div>
+                                <div class="text-sm text-[#64748B] dark:text-[#94A3B8]">March 20, 2025 - Online</div>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="btn-primary text-sm px-3 py-1">View</button>
+                                <button class="btn-secondary text-sm px-3 py-1">Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-secondary" onclick="closeModal('manageDrivesModal')">Close</button>
+                </div>
+            </div>
+        </div>
 
     </div> <!-- End main-content -->
 
@@ -926,19 +1049,19 @@
             const sideNav = document.getElementById('sideNav');
             sideNav.classList.toggle('open');
         }
-        
+
         // Close side nav when clicking outside on mobile/tablet
-        document.addEventListener('click', function(event) {
+        document.addEventListener('click', function (event) {
             const sideNav = document.getElementById('sideNav');
             const navToggle = document.querySelector('.nav-toggle');
-            if (window.innerWidth <= 1024 && 
-                sideNav.classList.contains('open') && 
-                !sideNav.contains(event.target) && 
+            if (window.innerWidth <= 1024 &&
+                sideNav.classList.contains('open') &&
+                !sideNav.contains(event.target) &&
                 navToggle && !navToggle.contains(event.target)) {
                 sideNav.classList.remove('open');
             }
         });
-        
+
         // Logout function
         function handleLogout() {
             if (confirm('Are you sure you want to logout?')) {
@@ -947,7 +1070,7 @@
         }
     </script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Theme toggle functionality
             const themeToggle = document.getElementById('theme-toggle');
             if (themeToggle) {
@@ -973,9 +1096,9 @@
         }
 
         // Close modal when clicking outside
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             const modals = document.querySelectorAll('.modal');
-            modals.forEach(function(modal) {
+            modals.forEach(function (modal) {
                 if (event.target === modal) {
                     modal.classList.remove('active');
                     document.body.style.overflow = 'auto';
@@ -987,8 +1110,8 @@
         function handleAddStudentSubmit(event) {
             event.preventDefault();
             const studentName = document.getElementById('studentName').value;
-            
-            setTimeout(function() {
+
+            setTimeout(function () {
                 alert('Student "' + studentName + '" added successfully!');
                 closeModal('addStudentModal');
                 document.getElementById('addStudentForm').reset();
@@ -1004,8 +1127,8 @@
         function handleAddRecruiterSubmit(event) {
             event.preventDefault();
             const companyName = document.getElementById('companyName').value;
-            
-            setTimeout(function() {
+
+            setTimeout(function () {
                 alert('Recruiter "' + companyName + '" added successfully!');
                 closeModal('addRecruiterModal');
                 document.getElementById('addRecruiterForm').reset();
@@ -1022,8 +1145,8 @@
             event.preventDefault();
             const company = document.getElementById('driveCompany').value;
             const date = document.getElementById('driveDate').value;
-            
-            setTimeout(function() {
+
+            setTimeout(function () {
                 alert('Placement drive scheduled successfully for ' + company + ' on ' + date + '!');
                 closeModal('scheduleDriveModal');
                 document.getElementById('scheduleDriveForm').reset();
@@ -1039,8 +1162,8 @@
         function handlePostNoticeSubmit(event) {
             event.preventDefault();
             const noticeTitle = document.getElementById('noticeTitle').value;
-            
-            setTimeout(function() {
+
+            setTimeout(function () {
                 alert('Notice "' + noticeTitle + '" posted successfully!');
                 closeModal('postNoticeModal');
                 document.getElementById('postNoticeForm').reset();
@@ -1048,5 +1171,5 @@
         }
     </script>
 </body>
-</html>
 
+</html>
